@@ -1,0 +1,22 @@
+.swoosh{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.swoosh img{
+    height: 50px;
+    width: 50px;
+    padding-bottom: 10px;
+    fill: red;
+}
+.swoosh p{
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    color: #339980;
+}
+.swoosh-image{
+    filter: invert(54%) sepia(11%) saturate(1976%) hue-rotate(115deg) brightness(92%) contrast(90%);
+}

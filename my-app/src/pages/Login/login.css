@@ -1,0 +1,105 @@
+.background-login{
+    height: 50vh;
+    width: 100%;
+    background-color: #FFF;
+    padding-top: 5%;
+    border-radius: 15px;
+}
+.login-container{
+    width: 100%;
+    height: 100%;
+}
+.background-login h1{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #7A6B5E;
+}
+.login-input{
+    width: 90%;
+    height: 90%;
+    margin: 0 auto;
+    font-family: 'Roboto';
+    font-weight: 600;
+    color: #7A6B5E;
+
+}
+.login-input input{
+    background: #F0F0F5;
+    border-radius: 10px;
+    width: 100%;
+    height: 5vh;
+    display: flex;
+
+}
+.login-email{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.login-password{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.submit-login-button{
+    padding-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+.create{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5px;
+}
+.create p{
+    padding-right: 5px;
+}
+.submit-login-button button{
+    background-color:#71BA98;
+    width: 80%;
+    height: 5vh;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #FFF;
+    font-family: 'Roboto';
+    font-weight: 700;
+}
+.submit-login-button button:hover{
+    background-color: #339980;
+}
+@media screen and (max-width: 320px){
+    .background-login h1{
+        font-size: 12px;
+        padding-bottom: 30px;
+    }
+    .create p{
+        font-size: 12px;
+    }
+}
+@media screen and (min-width:800px){
+    .background-login{
+        width: 60%;
+        height: 50%;
+    }
+    .login-container{
+        display: flex;
+        justify-content: center;
+    }
+}
+@media screen and (min-width: 1000px) and (max-width: 1199px){
+    .background-login{
+        max-width: 50%;
+        height: 400px;
+    }
+}
+@media screen and (min-width: 1200px){
+    .background-login{
+        max-width: 40%;
+        height: 400px;
+    }
+}
+

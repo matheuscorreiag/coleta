@@ -1,0 +1,39 @@
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+input:focus {
+    outline:none;
+}
+
+body{
+    width: 100vw !important;
+    height: 100vh;
+    background: #F0F0F5;
+}
+.link{
+    text-decoration: none;
+    color:#71BA98;
+}
+.link:hover{
+    color: #339980;
+}
+.app{
+    height:100% !important;
+}
+#root{
+    width: 90%;
+    margin: 0 auto;
+}
+@media (min-width: 1200px){
+    body{
+        width: 90vw !important;
+        margin: 0 auto !important;
+    }
+}
