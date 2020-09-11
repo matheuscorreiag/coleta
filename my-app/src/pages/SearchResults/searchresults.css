@@ -35,7 +35,6 @@
     justify-content: center;
     align-items: center;
     padding-bottom: 30px;
-
 }
 .results{
     background-color: #FFF;
@@ -49,6 +48,44 @@
     align-items: center;
     justify-content: center;
 
+}
+.modal{
+    cursor: pointer;
+    background-color: #FFF;
+    height: 200px;
+    width: 85vw;
+    border-radius: 10px;
+    max-width: 820px;
+}
+.modal:hover{
+    transition: 0.2s;
+    height: 280px;
+}
+
+.modal-buttons{
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+}
+.modal:hover .modal-buttons{
+    visibility: visible;
+    opacity: 1;
+    display: flex;
+    height: 30px;
+    width:100%;
+    grid-gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+.modal-buttons button{
+    cursor:pointer;
+    height: 50px;
+    width: 45%;
+    background-color: #339980;
+    border-radius: 15px;
+    color:#FFF;
+    justify-content: space-between;
 }
 .middle-align{
     display: flex;
