@@ -57,10 +57,10 @@
     border-radius: 10px;
     max-width: 820px;
 }
-.modal:hover{
+/* .modal:hover{
     transition: 0.2s;
     height: 280px;
-}
+} */
 
 .modal-buttons{
     display: none;
@@ -68,7 +68,7 @@
     opacity: 0;
 
 }
-.modal:hover .modal-buttons{
+.modal-buttons-active{
     visibility: visible;
     opacity: 1;
     display: flex;
@@ -78,7 +78,7 @@
     align-items: center;
     justify-content: center;
 }
-.modal-buttons button{
+.modal-buttons-active button{
     cursor:pointer;
     height: 50px;
     width: 45%;
@@ -112,7 +112,11 @@
     border-radius: 15px;
     color: #fff;
 }
-.description-container, .state-container p{
-    font-family: 'Ubuntu';
+.description-container{
+    font-family: 'Roboto';
+}
+.state-container p{
+    font-family: 'Roboto';
+    font-weight: bold ;
 }
 

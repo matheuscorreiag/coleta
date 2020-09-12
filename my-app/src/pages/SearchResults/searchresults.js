@@ -23,6 +23,15 @@ function SearchResults() {
             window.location.reload();
         }
     }
+    function modal() {
+        const element = document.getElementById("modal")
+        const element2 = document.getElementById("test")
+        element2.style.height = '250px'
+
+        element.classList.remove("modal-buttons")
+        element.classList.add("modal-buttons-active")
+
+    }
     return (
         <>
             <ArrowHeader />
@@ -37,7 +46,7 @@ function SearchResults() {
 
             {items.map(item => (
                 < div className="results-container" >
-                    <div className="modal">
+                    <div id="test" className="modal" onClick={modal}>
                         <div className="results" >
                             <div className="middle-align">
                                 <div className="img-container">
@@ -59,9 +68,8 @@ function SearchResults() {
                                 </div>
                             </div>
                         </div>
-                        <div className="modal-buttons">
+                        <div id='modal' className="modal-buttons">
                             <button type="button" className="test"> Entrar em contato</button>
-
                             <button type="button" className="test"> Ver detalhes </button>
                         </div>
                     </div>
