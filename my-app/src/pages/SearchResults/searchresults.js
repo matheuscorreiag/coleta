@@ -24,13 +24,28 @@ function SearchResults() {
         }
     }
     function modal() {
-        const element = document.getElementById("modal")
-        const element2 = document.getElementById("test")
-        element2.style.height = '250px'
 
-        element.classList.remove("modal-buttons")
-        element.classList.add("modal-buttons-active")
 
+        const element = document.getElementsByClassName("modal-overlay");
+        const element2 = document.getElementsByClassName("modal-buttons")
+        var element3 = document.querySelectorAll('.modal-overlay');
+
+        for (var i = 0; i < element.length; i++) {
+            element3[i].id = 'no-' + i
+            if (element3[i].id == 'no-0') {
+                element[i].style.height = '250px'
+                element2[i].classList.add("modal-buttons-active")
+            }
+            /* 
+            console.log(element[i].id); */
+        }
+
+        /*    const element = document.getElementById("modal-buttons")
+           const element2 = document.getElementById("modal-overlay")
+           element2.style.height = '250px'
+   
+           element.classList.remove("modal-buttons")
+           element.classList.add("modal-buttons-active") */
     }
     return (
         <>
@@ -46,8 +61,8 @@ function SearchResults() {
 
             {items.map(item => (
                 < div className="results-container" >
-                    <div id="test" className="modal" onClick={modal}>
-                        <div className="results" >
+                    <div className="modal-overlay" onClick={modal}>
+                        <div className="card" >
                             <div className="middle-align">
                                 <div className="img-container">
                                     <img src={require('../../assets/img/icons/1656641261586786442.svg')} alt='cgalogo' />
@@ -68,7 +83,7 @@ function SearchResults() {
                                 </div>
                             </div>
                         </div>
-                        <div id='modal' className="modal-buttons">
+                        <div id='modal-buttons' className="modal-buttons">
                             <button type="button" className="test"> Entrar em contato</button>
                             <button type="button" className="test"> Ver detalhes </button>
                         </div>
