@@ -1,21 +1,9 @@
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
 body{
     width: 100vw;
     height: 80vh;
     background: #F0F0F5;
+    font-family: 'Ubuntu', sans-serif;
 }
-a{
-    text-decoration: none;
-}
-a:visited{
-    text-decoration: none;
-}
-
-
 .mid-app{
     padding-top: 15%;
 }
@@ -25,7 +13,6 @@ a:visited{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Ubuntu';
     color: #7A6B5E;
 }
 .wrapper-app img{
@@ -44,19 +31,20 @@ a:visited{
 .actions-app a button {
     display: flex;
     align-items: center;
+    flex-direction: row;
     justify-content: center;
     margin: 3.2rem 0;
-    width: 14rem;
+    padding: 0 20px;
+    min-width: 285px;
+    /* width: 14rem; */
     height: 5rem;
     background-color:#71BA98;
-    border-radius: 0.8rem;
-    font-family: 'Roboto';
+    border-radius: 14px;
     font-weight: bold;
-    white-space: nowrap;
     text-align: center;
 }
 .actions-app a button p{
-    font-size: 1rem;
+    font-size: 2vh;
     color: #FFF;
 }
 .actions-app a button img{
@@ -74,9 +62,6 @@ a:visited{
     align-items: center;
     justify-content: center;
     margin-right: 5px;
-}
-.search-app{
-    margin: auto 0;
 }
 /* ----------- 0 - 450px ----------- */
 @media screen 
@@ -105,6 +90,9 @@ a:visited{
 @media screen 
   and (min-width: 456px) 
   and (max-width: 659px){
+    .actions-app a button{
+        min-width: 100px;
+    }
       .mid-app .title-app h1{
           font-size: 3rem;
       }
@@ -164,7 +152,6 @@ a:visited{
         margin: 0;
         display: grid;
         grid-template-columns: 1.5fr 1fr;
-        font-family: 'Ubuntu';
         color: #7A6B5E;
     
     }

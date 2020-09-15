@@ -1,11 +1,13 @@
-import React from 'react';
-import Header from '../../components/PageMenuHeader/Header';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Header from "../../components/PageMenuHeader/Header";
+import { Link, useHistory } from "react-router-dom";
+import { LockOpen, Search } from "@material-ui/icons";
 
-import './landing.css';
-import '../../assets/styles/global.css'
+import "./landing.css";
+import "../../assets/styles/global.css";
 
 function Landing() {
+  const history = useHistory();
   return (
     <>
       <Header />
@@ -13,42 +15,36 @@ function Landing() {
       <div className="mid-app">
         <div className="wrapper-app">
           <div className="title-app">
-            <h1>Seu ambiente de <br />coleta de equipamentos<br /> eletroeletrônicos.</h1>
+            <h1>
+              Seu ambiente de <br />
+              coleta de equipamentos
+              <br /> eletroeletrônicos.
+            </h1>
             <p>
-              Ajudamos pessoas a encontrarem pontos <br />de coleta de forma eficiente.
-                    </p>
+              Ajudamos pessoas a encontrarem pontos <br />
+              de coleta de forma eficiente.
+            </p>
           </div>
-          <img src={require('../../assets/img/pngwave.png')} alt='pngwave' />
+          <img src={require("../../assets/img/pngwave.png")} alt="pngwave" />
         </div>
 
         <div className="actions-app">
-
-          <Link to='/search'>
+          <Link to="/search">
             <button>
-              <div className="search-app">
-                <img src={require('../../assets/img/icons/1656641261586786442.svg')} alt='lupa' />
-                <p>Buscar por um
-                componente
-                            </p>
-              </div>
+              <Search style={{ color: "#FFF", marginRight: 10 }} />
+              <p>Buscar por um componente</p>
             </button>
           </Link>
-
           <div className="divider-app"></div>
-
-          <Link to='/login'>
+          <Link to="/login">
             <button>
-              <div className="login-app">
-                <img src={require('../..//assets/img/icons/17755256141554126449.svg')} alt='chave' />
-                <p>Fazer login</p>
-              </div>
+              <LockOpen style={{ color: "#FFF", marginRight: 10 }} />
+              <p>Fazer login</p>
             </button>
           </Link>
-
         </div>
       </div>
     </>
-
   );
 }
 

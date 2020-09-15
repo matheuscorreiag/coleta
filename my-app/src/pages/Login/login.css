@@ -10,7 +10,6 @@
     height: 100%;
 }
 .background-login h1{
-    font-family: 'Ubuntu', sans-serif;
     font-size: 1.8rem;
     text-align: center;
     color: #7A6B5E;
@@ -19,7 +18,7 @@
     width: 90%;
     height: 90%;
     margin: 0 auto;
-    font-family: 'Roboto';
+
     font-weight: 600;
     color: #7A6B5E;
 
@@ -65,7 +64,7 @@
     border-radius: 15px;
     cursor: pointer;
     color: #FFF;
-    font-family: 'Roboto';
+
     font-weight: 700;
 }
 .submit-login-button button:hover{

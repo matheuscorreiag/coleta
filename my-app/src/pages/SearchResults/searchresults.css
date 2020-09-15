@@ -37,6 +37,7 @@
     padding-bottom: 30px;
 }
 .card{
+    cursor: pointer;
     background-color: #FFF;
     height: 200px;
     width: 85vw;
@@ -47,10 +48,8 @@
     grid-template-columns: 1fr 3fr 1fr;
     align-items: center;
     justify-content: center;
-
 }
 .modal-overlay{
-    cursor: pointer;
     background-color: #FFF;
     height: 200px;
     width: 85vw;
@@ -113,10 +112,10 @@
     color: #fff;
 }
 .description-container{
-    font-family: 'Roboto';
+
 }
 .state-container p{
-    font-family: 'Roboto';
+
     font-weight: bold ;
 }
 

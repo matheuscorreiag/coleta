@@ -1,14 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
-a{
-    text-decoration: none;
-}
-a:visited{
-    text-decoration: none;
-}
 body{
     width: 90vw;
     height: 100vh;
@@ -22,7 +11,7 @@ body{
     flex-direction: column;
 }
 .mid-search h1{
-    font-family: 'Ubuntu', sans-serif;
+
     font-size: 1.8rem;
     text-align: center;
     color: #7A6B5E ;
@@ -42,7 +31,7 @@ body{
 .mid-search button{
     background-color: #71BA98;
     font-size: 1rem;
-    font-family: 'Ubuntu';
+
     width: 70vw;
     height: 50px;
     border-radius: 15px;

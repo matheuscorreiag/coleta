@@ -11,11 +11,23 @@ input[type=number] {
 input:focus {
     outline:none;
 }
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+a{
+    text-decoration: none;
+}
+a:visited{
+    text-decoration: none;
+}
 
 body{
     width: 100vw !important;
     height: 100vh;
     background: #F0F0F5;
+    font-family: 'Poppins', sans-serif;
 }
 .link{
     text-decoration: none;
