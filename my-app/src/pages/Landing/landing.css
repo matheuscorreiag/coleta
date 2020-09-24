@@ -1,168 +1,151 @@
-body{
-    width: 100vw;
-    height: 80vh;
-    background: #F0F0F5;
-    font-family: 'Ubuntu', sans-serif;
+body {
+  width: 100vw;
+  height: 80vh;
+  background: #f0f0f5;
+  font-family: "Ubuntu", sans-serif;
 }
-.mid-app{
-    padding-top: 15%;
+.mid-app {
+  padding-top: 15%;
 }
-.wrapper-app{
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #7A6B5E;
+.wrapper-app {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-brown);
 }
-.wrapper-app img{
-    width: 350px;
-    height: 400px;
-    max-width: 100%;
+.wrapper-app img {
+  width: 350px;
+  height: 400px;
+  max-width: 100%;
 }
-.wrapper-app p{
-    padding-right: 65px;
+.wrapper-app p {
+  padding-right: 65px;
 }
-.actions-app{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.actions-app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .actions-app a button {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: center;
-    margin: 3.2rem 0;
-    padding: 0 20px;
-    min-width: 285px;
-    /* width: 14rem; */
-    height: 5rem;
-    background-color:#71BA98;
-    border-radius: 14px;
-    font-weight: bold;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  margin: 3.2rem 0;
+  padding: 0 20px;
+  min-width: 285px;
+  /* width: 14rem; */
+  height: 5rem;
+  background-color: var(--light-green);
+  border-radius: 14px;
+  font-weight: bold;
+  text-align: center;
 }
-.actions-app a button p{
-    font-size: 2vh;
-    color: #FFF;
+.actions-app a button p {
+  font-size: 2vh;
+  color: var(--white);
 }
-.actions-app a button img{
-    grid-area: logo;
-    width: 30px;
-    height: auto;
-    filter: invert();
+.actions-app a button img {
+  grid-area: logo;
+  width: 30px;
+  height: auto;
+  filter: invert();
 }
-.actions-app a button:hover{
-    cursor: pointer;
-    background-color: #339980;
+.actions-app a button:hover {
+  cursor: pointer;
+  background-color: var(--dark-green);
 }
-.actions-app a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 5px;
+.actions-app a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
 }
 /* ----------- 0 - 450px ----------- */
-@media screen 
-  and (max-width: 455px){
-      .actions-app{
-          display: grid;
-          grid-template-columns: 1fr;
-      }
-      .actions-app a{
-          height: 100px;
-          margin-right: 0;
-      }
-      .mid-app .wrapper-app img{
-          width: 40vh;
-          height: 40vh;
-      }
-      .mid-app .title-app h1{
-        font-size: 2.1rem;
-      }
-      .mid-app .title-app p{
-        font-size: 1.4rem;
-      }
+@media screen and (max-width: 455px) {
+  .actions-app {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .actions-app a {
+    height: 100px;
+    margin-right: 0;
+  }
+  .mid-app .wrapper-app img {
+    width: 40vh;
+    height: 40vh;
+  }
+  .mid-app .title-app h1 {
+    font-size: 2.1rem;
+  }
+  .mid-app .title-app p {
+    font-size: 1.4rem;
+  }
 }
 
 /* ----------- 450 - 650px ----------- */
-@media screen 
-  and (min-width: 456px) 
-  and (max-width: 659px){
-    .actions-app a button{
-        min-width: 100px;
-    }
-      .mid-app .title-app h1{
-          font-size: 3rem;
-      }
-      .mid-app .title-app p{
-          font-size: 2rem;
-      }
-
+@media screen and (min-width: 456px) and (max-width: 659px) {
+  .actions-app a button {
+    min-width: 100px;
+  }
+  .mid-app .title-app h1 {
+    font-size: 3rem;
+  }
+  .mid-app .title-app p {
+    font-size: 2rem;
+  }
 }
 
 /* ----------- 650px - 950px ----------- */
-@media screen 
-  and (min-width: 660px)
-  and (max-width: 950px){
-    
-    .mid-app .wrapper-app h1{
-        font-size: 4.6rem;
-    }
-    .mid-app .wrapper-app .title-app p{
-        font-size: 2rem;
-    }
-    .actions-app a button{
-        width: 40vw;
-        height: 15vh;
-        font-size: 1.2rem;
-
-    }
+@media screen and (min-width: 660px) and (max-width: 950px) {
+  .mid-app .wrapper-app h1 {
+    font-size: 4.6rem;
+  }
+  .mid-app .wrapper-app .title-app p {
+    font-size: 2rem;
+  }
+  .actions-app a button {
+    width: 40vw;
+    height: 15vh;
+    font-size: 1.2rem;
+  }
 }
 
 /* ----------- 950px - 1200px ----------- */
-@media screen 
-  and (min-width: 951px) 
-  and (max-width: 1200px){
-
-    .mid-app .wrapper-app h1{
-        font-size: 6rem;
-    }
-    .mid-app .wrapper-app .title-app p{
-        font-size: 2rem;
-    }
-    .actions-app a button{
-        width: 40vw;
-        height: 15vh;
-        font-size: 1.2rem;
-
-    }
-
+@media screen and (min-width: 951px) and (max-width: 1200px) {
+  .mid-app .wrapper-app h1 {
+    font-size: 6rem;
+  }
+  .mid-app .wrapper-app .title-app p {
+    font-size: 2rem;
+  }
+  .actions-app a button {
+    width: 40vw;
+    height: 15vh;
+    font-size: 1.2rem;
+  }
 }
 
 /* ----------- 1200px + ----------- */
-@media screen 
-  and (min-width: 1201px){
-    
-    .mid-app{
-        padding-top: 0;
-    }
-    .wrapper-app{
-        margin: 0;
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-        color: #7A6B5E;
-    
-    }
-    .wrapper-app h1{
-        font-size: 4rem;
-    }
-    .wrapper-app p{
-        font-size: 1.6rem;
-    }
-    .actions-app{
-        margin: 0;
-        justify-content: start;
-    }
+@media screen and (min-width: 1201px) {
+  .mid-app {
+    padding-top: 0;
+  }
+  .wrapper-app {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+  }
+  .wrapper-app h1 {
+    font-size: 4rem;
+  }
+  .wrapper-app p {
+    font-size: 1.6rem;
+  }
+  .actions-app {
+    margin: 0;
+    justify-content: start;
+  }
 }
