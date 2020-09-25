@@ -13,7 +13,7 @@
 }
 .mid-about p {
   font-size: 1.25rem;
-  color: black;
+  color: var(--light-brown);
   text-align: justify;
 }
 .bottom {

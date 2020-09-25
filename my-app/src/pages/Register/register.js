@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
+import swal from "sweetalert";
 
 import "./register.css";
 import "../../assets/styles/global.css";
 import api from "../../services/api";
 
 function Register() {
+  const history = useHistory();
   const [params, setParams] = useState({
     name: "",
     email: "",
@@ -35,14 +37,17 @@ function Register() {
         console.log(params);
         api
           .post("users", params)
-          .then((response) => {
+          .then(async (response) => {
             console.log(response);
+            swal("Pronto!", "Seu usuário foi criado!", "success");
+            await new Promise((r) => setTimeout(r, 5000));
+            history.push("/");
           })
           .catch((error) => {
             console.log(error);
           });
       } else {
-        console.log("DEU ERRO");
+        swal("Erro!", "Confira seus dados e tente novamente.");
       }
     }
   }
@@ -77,30 +82,6 @@ function Register() {
             </div>
             <div className="dual-block">
               <div className="block">
-                <p> Celular </p>
-                <input
-                  type="number"
-                  onChange={(event) =>
-                    setParams({ ...params, cell: event.target.value })
-                  }
-                />
-              </div>
-              <div className="block">
-                <p> Perfil </p>
-                <select
-                  value={params.perfil}
-                  onChange={(event) =>
-                    setParams({ ...params, perfil: event.target.value })
-                  }
-                >
-                  <option value="0"> Usuário Básico </option>
-                  <option value="1"> Técnico de Informática I</option>
-                  <option value="2"> Técnico de Informática II</option>
-                  <option value="3"> Técnico em Eletrônica I</option>
-                  <option value="4"> Técnico de Eletrônica II</option>
-                </select>
-              </div>
-              <div className="block">
                 <p> Senha </p>
                 <input
                   type="password"
@@ -115,6 +96,15 @@ function Register() {
                   type="password"
                   onChange={(event) =>
                     setParams({ ...params, passwordConf: event.target.value })
+                  }
+                />
+              </div>
+              <div className="block">
+                <p> Celular </p>
+                <input
+                  type="number"
+                  onChange={(event) =>
+                    setParams({ ...params, cell: event.target.value })
                   }
                 />
               </div>
@@ -152,7 +142,6 @@ function Register() {
             </div>
             <div className="button-register">
               <button type="submit" onClick={setRegisterParams}>
-                {" "}
                 Concluir cadastro
               </button>
             </div>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-
-import "./searchresults.css";
+import "./usersearchresults.css";
 import "../../assets/styles/global.css";
 import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import api from "../../services/api";
 
-function SearchResults() {
-  const user = true;
+// import { Container } from './styles';
+
+function UserSearchResults() {
   const [items, setItems] = useState([]);
   const [search, setSearch] = useState(localStorage.getItem("@coleta-search"));
   const [id, setId] = useState([]);
@@ -24,17 +24,15 @@ function SearchResults() {
     }
   }
   function modal(index) {
-    if (user) {
-      var element = document.querySelectorAll(".modal-overlay");
-      const element2 = document.getElementsByClassName("modal-buttons");
+    var element = document.querySelectorAll(".modal-overlay");
+    const element2 = document.getElementsByClassName("modal-buttons");
 
-      if (element[index].style.height == "250px") {
-        element[index].style.height = "200px";
-        element2[index].classList.remove("modal-buttons-active");
-      } else {
-        element[index].style.height = "250px";
-        element2[index].classList.add("modal-buttons-active");
-      }
+    if (element[index].style.height == "250px") {
+      element[index].style.height = "200px";
+      element2[index].classList.remove("modal-buttons-active");
+    } else {
+      element[index].style.height = "250px";
+      element2[index].classList.add("modal-buttons-active");
     }
 
     /*  var element = document.querySelectorAll('.modal-overlay')
@@ -73,7 +71,7 @@ function SearchResults() {
   return (
     <>
       <ArrowHeader />
-      <div className="search-container">
+      {/* <div className="search-container">
         <div className="input-button">
           <input
             type="text"
@@ -131,9 +129,9 @@ function SearchResults() {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
     </>
   );
 }
 
-export default SearchResults;
+export default UserSearchResults;

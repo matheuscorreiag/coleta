@@ -8,6 +8,8 @@ import Login from "../../pages/Login/login";
 import Register from "../../pages/Register/register";
 import CompleteRegister from "../../pages/CompleteRegister/completeregister";
 import SearchResults from "../../pages/SearchResults/searchresults";
+import UserIndex from "../../pages/UserIndex/userindex";
+import UserSearchResults from "../../pages/UserSearchResults/usersearchresults";
 
 function Routes() {
   return (
@@ -24,6 +26,12 @@ function Routes() {
           component={CompleteRegister}
         />
         <Route path="/searchresults" exact={true} component={SearchResults} />
+        <Route path="/userindex" exact={true} component={UserIndex} />
+        <Route
+          path="/usersearchresults"
+          exact={true}
+          component={UserSearchResults}
+        />
       </Switch>
     </BrowserRouter>
   );
