@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import UserNavBar from "../../components/UserNavBar/usernavbar";
 import Add from "@material-ui/icons/Add";
 
+import { useDispatch } from "react-redux";
+import { addItemFetch } from "../../store/fetchActions";
+
 import db from "../../data/types.json";
 
 import "./usernewitem.css";
@@ -10,6 +13,8 @@ import "../../assets/styles/global.css";
 // import { Container } from './styles';
 
 function UserNewItem() {
+  const dispatch = useDispatch();
+
   const data = db.types;
   const [params, setParams] = useState({
     description: "",
@@ -19,7 +24,17 @@ function UserNewItem() {
     image: "",
   });
 
-  function newItem() {}
+  function onSubmit() {
+    dispatch(addItemFetch(params));
+    setParams({
+      description: "",
+      brand: "",
+      situation: 0,
+      comments: "",
+      image: "",
+    });
+    console.log(params);
+  }
   return (
     <>
       <UserNavBar />
@@ -80,9 +95,10 @@ function UserNewItem() {
               </div>
             </div>
           </div>
-          {console.log(params)}
           <div className="buttons-container">
-            <button className="confirm"> Confirmar</button>
+            <button className="confirm" onClick={onSubmit}>
+              Confirmar
+            </button>
             <button className="cancel"> Cancelar</button>
           </div>
         </div>

@@ -1,22 +1,32 @@
 import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./searchresults.css";
 import "../../assets/styles/global.css";
 import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import api from "../../services/api";
 
+import { getAllItems } from "../../store/fetchActions";
+
 function SearchResults() {
   const user = true;
-  const [items, setItems] = useState([]);
+  /*   const [items, setItems] = useState([]); */
   const [search, setSearch] = useState(localStorage.getItem("@coleta-search"));
-  const [id, setId] = useState([]);
+  /*   const [id, setId] = useState([]); */
+
+  const items = useSelector((state) => state.items); //selecionando
+  const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(getAllItems(search)); //disparando action de chamada na api
+  }, [dispatch]); //fix warning
+
+  /* useEffect(() => {
     api.get(`items?search=${search}`).then((response) => {
       const data = response.data.reverse();
       setItems(data);
     });
-  }, []);
+  }, []); */
   function setSearchFilter() {
     if (search != "") {
       localStorage.setItem("@coleta-search", search);
@@ -24,17 +34,15 @@ function SearchResults() {
     }
   }
   function modal(index) {
-    if (user) {
-      var element = document.querySelectorAll(".modal-overlay");
-      const element2 = document.getElementsByClassName("modal-buttons");
+    var element = document.querySelectorAll(".modal-overlay");
+    const element2 = document.getElementsByClassName("modal-buttons");
 
-      if (element[index].style.height == "250px") {
-        element[index].style.height = "200px";
-        element2[index].classList.remove("modal-buttons-active");
-      } else {
-        element[index].style.height = "250px";
-        element2[index].classList.add("modal-buttons-active");
-      }
+    if (element[index].style.height == "250px") {
+      element[index].style.height = "200px";
+      element2[index].classList.remove("modal-buttons-active");
+    } else {
+      element[index].style.height = "250px";
+      element2[index].classList.add("modal-buttons-active");
     }
   }
   function incrementId() {
