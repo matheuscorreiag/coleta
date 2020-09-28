@@ -36,31 +36,6 @@ function SearchResults() {
         element2[index].classList.add("modal-buttons-active");
       }
     }
-
-    /*  var element = document.querySelectorAll('.modal-overlay')
-         var ids = [];
-         for (var i = 0; i < element.length; i++) {
-             ids[i] = element[i].id;
- 
-         }
-         console.log(ids); */
-    /* 
-        const element = document.getElementsByClassName("modal-overlay");
-        const element2 = document.getElementsByClassName("modal-buttons")
-        
-
-        
-        
-
-        for (var i = 0; i < element.length; i++) {
-            if (element3[i].id == 1) {
-                element[i].style.height = '250px'
-                element2[i].classList.add("modal-buttons-active")
-            } else {
-
-            }
-
-        } */
   }
   function incrementId() {
     var element = document.querySelectorAll(".card");
@@ -110,7 +85,7 @@ function SearchResults() {
                   <React.Fragment key={item.id}>
                     <p>Descrição: {item.description}</p>
                     <p>Marca: {item.brand}</p>
-                    <p>Local: {item.local}</p>
+                    <p>Local: {item.comments}</p>
                   </React.Fragment>
                 </div>
               </div>

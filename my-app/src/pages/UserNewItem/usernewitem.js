@@ -1,0 +1,94 @@
+import React, { useState } from "react";
+import UserNavBar from "../../components/UserNavBar/usernavbar";
+import Add from "@material-ui/icons/Add";
+
+import db from "../../data/types.json";
+
+import "./usernewitem.css";
+import "../../assets/styles/global.css";
+
+// import { Container } from './styles';
+
+function UserNewItem() {
+  const data = db.types;
+  const [params, setParams] = useState({
+    description: "",
+    brand: "",
+    situation: 0,
+    comments: "",
+    image: "",
+  });
+
+  function newItem() {}
+  return (
+    <>
+      <UserNavBar />
+      <div className="usernewitem-page">
+        <div className="usernewitem-container">
+          <div className="usernewitem">
+            <h1>Cadastrar componentes</h1>
+            <h2>Dados</h2>
+
+            <div className="newitemform">
+              Descrição
+              <select
+                onChange={(event) =>
+                  setParams({ ...params, description: event.target.value })
+                }
+              >
+                <option value={0}> Selecione um tipo de componente</option>
+                {data.map((type) => (
+                  <option key={type.type} value={type.name}>
+                    {type.name}
+                  </option>
+                ))}
+              </select>
+              Marca
+              <input
+                type="text"
+                onChange={(event) =>
+                  setParams({ ...params, brand: event.target.value })
+                }
+              />
+              Situação
+              <select
+                onChange={(event) =>
+                  setParams({ ...params, situation: event.target.value })
+                }
+              >
+                <option value={0}> Selecione a situação do equipamento</option>
+                <option value={1}> Reciclagem</option>
+                <option value={2}> Reuso</option>
+                <option value={3}> Doação</option>
+              </select>
+              <div className="notes">
+                Comentários (opcional)
+                <textarea
+                  onChange={(event) =>
+                    setParams({ ...params, comments: event.target.value })
+                  }
+                  placeholder="Insira informações adicionais"
+                ></textarea>
+              </div>
+              <div className="uploadImage-container">
+                <div className="uploadImage">
+                  <Add />
+                </div>
+                <div className="uploadImage-text">
+                  <span>Adicione uma imagem</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {console.log(params)}
+          <div className="buttons-container">
+            <button className="confirm"> Confirmar</button>
+            <button className="cancel"> Cancelar</button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default UserNewItem;

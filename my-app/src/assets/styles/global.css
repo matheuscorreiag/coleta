@@ -36,6 +36,12 @@ body {
   background: #f0f0f5;
   font-family: "Poppins", sans-serif;
 }
+button {
+  font-family: "Poppins";
+}
+select {
+  font-family: "Poppins";
+}
 .link {
   text-decoration: none;
   color: var(--light-green);

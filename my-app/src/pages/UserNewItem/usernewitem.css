@@ -1,0 +1,162 @@
+.usernewitem-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 100px;
+}
+.usernewitem-container {
+  width: 80vw;
+  height: 800px;
+  max-width: 700px;
+  background-color: var(--white);
+}
+.usernewitem {
+  width: 80vw;
+  height: 400;
+}
+.usernewitem h1 {
+  color: var(--light-brown);
+  padding: 5px 0px 0px 10px;
+  font-size: 1.5rem;
+}
+.usernewitem h2 {
+  color: var(--light-brown);
+  padding: 5px 0px 0px 10px;
+  font-size: 1.2rem;
+}
+.newitemform {
+  display: flex;
+  color: var(--light-brown);
+  flex-direction: column;
+  width: 95%;
+  height: 70%;
+  margin: 0 auto;
+}
+.newitemform select,
+.newitemform input,
+.newitemform textarea {
+  height: 50px;
+  border-radius: 5px;
+  background-color: var(--light-grey);
+}
+.notes {
+  padding-top: 10px;
+  width: 100%;
+  height: 100px;
+}
+.newitemform textarea {
+  resize: none;
+  width: 100%;
+  height: 100px;
+}
+.newitemform textarea::placeholder {
+  font-family: "Poppins";
+}
+.uploadImage-container {
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.uploadImage-container span {
+  padding-left: 10px;
+}
+.uploadImage {
+  background-color: var(--light-green);
+  border-radius: 50%;
+  min-width: 60px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.uploadImage svg {
+  color: var(--white);
+}
+
+.uploadImage:hover {
+  background-color: var(--dark-green);
+}
+
+.uploadImage-text span {
+  white-space: nowrap;
+}
+.buttons-container {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.buttons-container button {
+  background-color: var(--light-green);
+  width: 160px;
+  height: 60px;
+  border-radius: 14px;
+  color: var(--white);
+  cursor: pointer;
+}
+.buttons-container button:hover {
+  background-color: var(--dark-green);
+}
+
+@media screen and (min-width: 800px) {
+  .usernewitem-container {
+    width: 880px;
+    height: 800 px;
+  }
+  .usernewitem {
+    padding: 50px 0px 0px 50px;
+    width: 600px;
+    height: 550px;
+  }
+  .newitemform {
+    margin: 0;
+    height: 600px;
+  }
+  .usernewitem h1 {
+    font-size: 30px;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .usernewitem h2 {
+    font-size: 21px;
+    padding: 0;
+    padding-bottom: 10px;
+  }
+  .buttons-container button {
+    width: 300px;
+    height: 60px;
+  }
+  .uploadImage {
+    width: 80px;
+    height: 80px;
+  }
+  .buttons-container {
+    padding-top: 40px;
+  }
+  .newitemform input {
+    height: 40px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .uploadImage-container {
+    flex-direction: column;
+  }
+  .buttons-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .buttons-container button {
+    width: 90%;
+    height: 60px;
+  }
+}
+@media screen and (min-width: 401) and (max-width: 465px) {
+  .uploadImage-container {
+    flex-direction: column;
+  }
+}

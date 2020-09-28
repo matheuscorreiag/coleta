@@ -1,0 +1,15 @@
+{
+  "types": [
+    { "type": 1, "name": "Computador completo" },
+    { "type": 2, "name": "Gabinete" },
+    { "type": 3, "name": "Monitor" },
+    { "type": 4, "name": "Mouse" },
+    { "type": 5, "name": "Teclado" },
+    { "type": 6, "name": "Impressora e Scanner" },
+    { "type": 7, "name": "Fax" },
+    { "type": 8, "name": "Telefone" },
+    { "type": 9, "name": "Caixa de Som" },
+    { "type": 10, "name": "Estabilizador, Nobreak e Fonte" },
+    { "type": 11, "name": "Outros(Cabos e Peças)" }
+  ]
+}

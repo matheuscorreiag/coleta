@@ -9,7 +9,7 @@ import Register from "../../pages/Register/register";
 import CompleteRegister from "../../pages/CompleteRegister/completeregister";
 import SearchResults from "../../pages/SearchResults/searchresults";
 import UserIndex from "../../pages/UserIndex/userindex";
-import UserSearchResults from "../../pages/UserSearchResults/usersearchresults";
+import UserNewItem from "../../pages/UserNewItem/usernewitem";
 
 function Routes() {
   return (
@@ -27,11 +27,7 @@ function Routes() {
         />
         <Route path="/searchresults" exact={true} component={SearchResults} />
         <Route path="/userindex" exact={true} component={UserIndex} />
-        <Route
-          path="/usersearchresults"
-          exact={true}
-          component={UserSearchResults}
-        />
+        <Route path="/usernewitem" exact={true} component={UserNewItem} />
       </Switch>
     </BrowserRouter>
   );
