@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import UserNavBar from "../../components/UserNavBar/usernavbar";
 import Add from "@material-ui/icons/Add";
-
+import swal from "sweetalert";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addItemFetch } from "../../store/fetchActions";
 
 import db from "../../data/types.json";
 
-import "./usernewitem.css";
+import "./styles.css";
 import "../../assets/styles/global.css";
 
-// import { Container } from './styles';
-
-function UserNewItem() {
+const UserNewItem = () => {
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const data = db.types;
@@ -24,7 +24,7 @@ function UserNewItem() {
     image: "",
   });
 
-  function onSubmit() {
+  const onSubmit = () => {
     dispatch(addItemFetch(params));
     setParams({
       description: "",
@@ -33,8 +33,9 @@ function UserNewItem() {
       comments: "",
       image: "",
     });
-    console.log(params);
-  }
+    swal("Pronto!", "Novo equipamento cadastrado com sucesso", "success");
+    history.push("/searchresults");
+  };
   return (
     <>
       <UserNavBar />
@@ -105,6 +106,6 @@ function UserNewItem() {
       </div>
     </>
   );
-}
+};
 
 export default UserNewItem;

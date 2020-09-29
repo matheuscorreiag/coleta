@@ -10,7 +10,7 @@ import Settings from "@material-ui/icons/Settings";
 import "./usernavbar.css";
 import "../../assets/styles/global.css";
 
-function UserNavBar() {
+const UserNavBar = () => {
   const history = useHistory();
 
   return (
@@ -30,6 +30,6 @@ function UserNavBar() {
       </div>
     </div>
   );
-}
+};
 
 export default UserNavBar;

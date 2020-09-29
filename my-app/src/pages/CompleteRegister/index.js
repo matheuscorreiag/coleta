@@ -1,7 +1,8 @@
 import React from "react";
-import "./completeregister.css";
 
-function CompleteRegister() {
+import "./styles.css";
+
+const CompleteRegister = () => {
   return (
     <div className="swoosh">
       <img
@@ -12,6 +13,6 @@ function CompleteRegister() {
       <p>Cadastro Concluído !</p>
     </div>
   );
-}
+};
 
 export default CompleteRegister;

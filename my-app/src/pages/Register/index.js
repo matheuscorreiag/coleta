@@ -3,11 +3,12 @@ import { useHistory } from "react-router-dom";
 import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import swal from "sweetalert";
 
-import "./register.css";
-import "../../assets/styles/global.css";
 import api from "../../services/api";
 
-function Register() {
+import "./styles.css";
+import "../../assets/styles/global.css";
+
+const Register = () => {
   const history = useHistory();
   const [params, setParams] = useState({
     name: "",
@@ -21,7 +22,7 @@ function Register() {
     state: "",
   });
 
-  function setRegisterParams(event) {
+  const setRegisterParams = (event) => {
     event.preventDefault();
     if (
       params.name !== "" &&
@@ -50,7 +51,7 @@ function Register() {
         swal("Erro!", "Confira seus dados e tente novamente.");
       }
     }
-  }
+  };
   return (
     <>
       <ArrowHeader />
@@ -150,6 +151,6 @@ function Register() {
       </form>
     </>
   );
-}
+};
 
 export default Register;

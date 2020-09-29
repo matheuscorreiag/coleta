@@ -1,18 +1,19 @@
 import React, { useState } from "react";
-import "./search.css";
-import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import { useHistory } from "react-router-dom";
+import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 
-function Search() {
+import "./styles.css";
+
+const Search = () => {
   const [search, setSearch] = useState("");
   const history = useHistory();
 
-  function setSearchFilter() {
-    if (search != "") {
+  const setSearchFilter = () => {
+    if (search !== "") {
       localStorage.setItem("@coleta-search", search);
       history.push("/searchresults");
     }
-  }
+  };
   return (
     <>
       <ArrowHeader />
@@ -27,6 +28,6 @@ function Search() {
       </div>
     </>
   );
-}
+};
 
 export default Search;

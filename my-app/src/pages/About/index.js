@@ -1,10 +1,10 @@
 import React from "react";
 import Header from "../../components/PageMenuHeader/Header";
 
-import "./about.css";
+import "./styles.css";
 import "../../assets/styles/global.css";
 
-function About() {
+const About = () => {
   return (
     <>
       <Header />
@@ -39,7 +39,7 @@ function About() {
             alt="facebook"
           />
         </a>
-        <a href="#">
+        <a href="https://www.google.com/cga">
           <img
             src={require("../../assets/img/icons/globe-outline.svg")}
             alt="globo"
@@ -48,6 +48,6 @@ function About() {
       </div>
     </>
   );
-}
+};
 
 export default About;

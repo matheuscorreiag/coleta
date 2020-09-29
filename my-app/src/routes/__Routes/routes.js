@@ -1,17 +1,34 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
-import Landing from "../../pages/Landing/landing";
-import About from "../../pages/About/about";
-import Search from "../../pages/Search/search";
-import Login from "../../pages/Login/login";
-import Register from "../../pages/Register/register";
-import CompleteRegister from "../../pages/CompleteRegister/completeregister";
-import SearchResults from "../../pages/SearchResults/searchresults";
-import UserIndex from "../../pages/UserIndex/userindex";
-import UserNewItem from "../../pages/UserNewItem/usernewitem";
+import Landing from "../../pages/Landing";
+import About from "../../pages/About";
+import Search from "../../pages/Search";
+import Login from "../../pages/Login";
+import Register from "../../pages/Register";
+import SearchResults from "../../pages/SearchResults";
+import UserIndex from "../../pages/UserIndex/index";
+import UserNewItem from "../../pages/UserNewItem";
+import UserSearch from "../../pages/UserSearch";
 
-function Routes() {
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  return (
+    <Route
+      {...rest}
+      render={(props) =>
+        isAuthenticated ? (
+          <Component {...props} />
+        ) : (
+          <Redirect to={{ pathname: "/", state: { from: props.location } }} />
+        )
+      }
+    />
+  );
+};
+
+const Routes = () => {
   return (
     <BrowserRouter>
       <Switch>
@@ -20,17 +37,23 @@ function Routes() {
         <Route path="/search" exact={true} component={Search} />
         <Route path="/login" exact={true} component={Login} />
         <Route path="/register" exact={true} component={Register} />
-        <Route
+        {/*         <Route
           path="/completeregister"
           exact={true}
           component={CompleteRegister}
-        />
+        /> */}
         <Route path="/searchresults" exact={true} component={SearchResults} />
-        <Route path="/userindex" exact={true} component={UserIndex} />
-        <Route path="/usernewitem" exact={true} component={UserNewItem} />
+
+        <PrivateRoute path="/userindex" exact={true} component={UserIndex} />
+        <PrivateRoute
+          path="/usernewitem"
+          exact={true}
+          component={UserNewItem}
+        />
+        <Route path="/usersearch" exact={true} component={UserSearch} />
       </Switch>
     </BrowserRouter>
   );
-}
+};
 
 export default Routes;

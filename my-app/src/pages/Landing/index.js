@@ -1,13 +1,12 @@
 import React from "react";
 import Header from "../../components/PageMenuHeader/Header";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { LockOpen, Search } from "@material-ui/icons";
 
-import "./landing.css";
+import "./styles.css";
 import "../../assets/styles/global.css";
 
-function Landing() {
-  const history = useHistory();
+const Landing = () => {
   return (
     <>
       <Header />
@@ -46,6 +45,6 @@ function Landing() {
       </div>
     </>
   );
-}
+};
 
 export default Landing;

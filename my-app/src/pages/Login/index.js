@@ -1,19 +1,21 @@
 import React, { useState } from "react";
-import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import { Link, useHistory } from "react-router-dom";
+import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import swal from "sweetalert";
 
-import "./login.css";
-import "../../assets/styles/global.css";
 import api from "../../services/api";
 
-function Login() {
+import "./styles.css";
+import "../../assets/styles/global.css";
+
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useState(false);
+  console.log(auth);
   const history = useHistory();
 
-  function validation() {
+  const validation = () => {
     api.get("/users").then((response) => {
       const data = response.data;
       console.log(data);
@@ -22,11 +24,15 @@ function Login() {
           setAuth(true);
           return history.push("userindex");
         } else {
-          return swal("Erro!", "Confira seus dados e tente novamente.");
+          return swal(
+            "Erro!",
+            "Confira seus dados e tente novamente.",
+            "green"
+          );
         }
       }
     });
-  }
+  };
   return (
     <>
       <ArrowHeader />
@@ -63,6 +69,6 @@ function Login() {
       </div>
     </>
   );
-}
+};
 
 export default Login;
