@@ -11,23 +11,13 @@ module.exports = {
   },
   async create(req, res, next) {
     try {
-      const {
-        name,
-        password,
-        email,
-        cell,
-        perfil,
-        center,
-        city,
-        state,
-      } = req.body;
+      const { name, password, email, cell, center, city, state } = req.body;
 
       await knex("users").insert({
         name,
         password,
         email,
         cell,
-        perfil,
         center,
         city,
         state,
@@ -40,16 +30,7 @@ module.exports = {
   },
   async update(req, res, next) {
     try {
-      const {
-        name,
-        password,
-        email,
-        cell,
-        perfil,
-        center,
-        city,
-        state,
-      } = req.body;
+      const { name, password, email, cell, center, city, state } = req.body;
       const { id } = req.params;
 
       await knex("users")
@@ -58,7 +39,6 @@ module.exports = {
         .update({ password })
         .update({ email })
         .update({ cell })
-        .update({ perfil })
         .update({ center })
         .update({ city })
         .update({ state });
