@@ -6,10 +6,10 @@ import "./styles.css";
 
 const UserSearch = () => {
   return (
-    <>
+    <div className="usersearch ">
       <UserNavBar />
       <SearchCards />
-    </>
+    </div>
   );
 };
 

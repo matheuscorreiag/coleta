@@ -8,17 +8,20 @@ const SearchCards = () => {
   const items = useSelector((state) => state.items); //selecionando
   const [search, setSearch] = useState(localStorage.getItem("@coleta-search"));
   const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   const modal = (index) => {
     var element = document.querySelectorAll(".modal-overlay");
     const element2 = document.getElementsByClassName("modal-buttons");
 
-    if (element[index].style.height === "250px") {
-      element[index].style.height = "200px";
-      element2[index].classList.remove("modal-buttons-active");
-    } else {
-      element[index].style.height = "250px";
-      element2[index].classList.add("modal-buttons-active");
+    if (isAuthenticated) {
+      if (element[index].style.height === "250px") {
+        element[index].style.height = "200px";
+        element2[index].classList.remove("modal-buttons-active");
+      } else {
+        element[index].style.height = "250px";
+        element2[index].classList.add("modal-buttons-active");
+      }
     }
   };
   const incrementId = () => {
