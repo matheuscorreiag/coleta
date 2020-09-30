@@ -1,30 +1,36 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch /* useSelector */ } from "react-redux";
 import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
-
 import swal from "sweetalert";
+/* import { authLogin } from "../../store/fetchActions"; */
+import { authFetch } from "../../store/fetchActions";
+import api from "../../services/api";
+
 import "./styles.css";
 import "../../assets/styles/global.css";
-import { authLogin } from "../../store/fetchActions";
 
 const Login = () => {
   const [login, setLogin] = useState({ email: "", password: "" });
-  /* const [auth, setAuth] = useState(false); */
   const history = useHistory();
   const dispatch = useDispatch();
-  const { isAuthenticated } = useSelector((state) => state.auth);
-
-  const validation = () => {
-    dispatch(authLogin(login));
-    if (isAuthenticated) {
-      history.push("userindex");
-    } else {
-      swal("Erro!", "Confira seus dados e tente novamente.");
+  const signIn = () => {
+    if (login.email !== "" && login.password !== "") {
+      api
+        .post("/login", login)
+        .then((res) => {
+          localStorage.setItem("token", res.data.token);
+          dispatch(authFetch());
+          history.push("userindex");
+        })
+        .catch((err) => {
+          swal("Erro!", "Confira seus dados e tente novamente.");
+          console.log(err);
+        });
     }
   };
   return (
-    <>
+    <div className="login">
       <ArrowHeader />
       <div className="login-container">
         <div className="background-login">
@@ -46,7 +52,7 @@ const Login = () => {
               </Link>
             </div>
             <div className="submit-login-button">
-              <button onClick={validation}> Entrar</button>
+              <button onClick={signIn}> Entrar</button>
             </div>
             <div className="create">
               <p> Não tem acesso? </p>
@@ -57,7 +63,7 @@ const Login = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

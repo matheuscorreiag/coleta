@@ -41,7 +41,7 @@ const SearchCards = () => {
   }, [dispatch]); //fix warning
   return (
     <>
-      <div className="search-container">
+      <div id="user" className="search-container ">
         <div className="input-button">
           <input
             type="text"

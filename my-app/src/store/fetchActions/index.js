@@ -20,14 +20,4 @@ export const addItemFetch = (item) => {
   };
 };
 
-export const authLogin = (user) => {
-  return (dispatch) => {
-    api
-      .post("/login", user)
-      .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        dispatch(login());
-      })
-      .catch(console.log);
-  };
-};
+export const authFetch = () => (dispatch) => dispatch(login());

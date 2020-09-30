@@ -39,8 +39,8 @@ const Register = () => {
           .post("users", params)
           .then(async (response) => {
             swal("Pronto!", "Seu usuário foi criado!", "success");
-            await new Promise((r) => setTimeout(r, 5000));
-            history.push("/");
+            await new Promise((r) => setTimeout(r, 2000));
+            history.push("/login");
           })
           .catch((error) => {
             console.log(error);
