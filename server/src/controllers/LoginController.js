@@ -5,6 +5,7 @@ class LoginController {
     this.loginService = loginService;
   }
   login = (req, res) => {
+    console.log(req.body);
     this.loginService
       .authenticate(req.body)
       .then((user) => (user ? res.json(user) : res.status(400)));
