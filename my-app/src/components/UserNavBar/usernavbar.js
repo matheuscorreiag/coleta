@@ -5,6 +5,8 @@ import Folder from "@material-ui/icons/Folder";
 import Add from "@material-ui/icons/Add";
 import ExitToApp from "@material-ui/icons/ExitToApp";
 import Settings from "@material-ui/icons/Settings";
+import { useDispatch, useSelector } from "react-redux";
+import logoutService from "../../services/logout.service";
 
 // import { Container } from './styles';
 import "./usernavbar.css";
@@ -12,6 +14,13 @@ import "../../assets/styles/global.css";
 
 const UserNavBar = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const { isAuthenticated } = useSelector((state) => state.auth);
+
+  const logout = () => {
+    isAuthenticated && dispatch(logoutService());
+  };
 
   return (
     <div className="sidebar-menu">
@@ -19,13 +28,13 @@ const UserNavBar = () => {
         <div className="top-icons">
           <Home onClick={() => history.push("/userindex")} />
 
-          <Folder />
+          <Folder onClick={() => history.push("/usersearch")} />
 
           <Add onClick={() => history.push("/usernewitem")} />
         </div>
         <div className="bottom-icons">
           <Settings />
-          <ExitToApp />
+          <ExitToApp onClick={logout} />
         </div>
       </div>
     </div>

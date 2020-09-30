@@ -26,7 +26,6 @@ const SearchCards = () => {
 
     for (var i = 0; i < element.length; i++) {
       element[i].setAttribute("id", i);
-      console.log(i);
     }
   };
 
@@ -50,22 +49,15 @@ const SearchCards = () => {
             onChange={(event) => setSearch(event.target.value)}
           />
           <button type="search" onClick={setSearchFilter}>
-            <img
-              src={require("../../assets/img/icons/1656641261586786442.svg")}
-              alt="lupa"
-            />
+            <img src={require("../../assets/img/icons/1656641261586786442.svg")} alt="lupa" />
           </button>
         </div>
       </div>
 
       {items.map((item) => (
-        <div className="results-container">
+        <div className="results-container ">
           <div className="modal-overlay">
-            <div
-              onLoad={incrementId}
-              className="card"
-              onClick={() => modal(items.indexOf(item))}
-            >
+            <div onLoad={incrementId} className="card" onClick={() => modal(items.indexOf(item))}>
               <div className="middle-align">
                 <div className="img-container">
                   <img

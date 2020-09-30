@@ -1,37 +1,27 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
+
 import swal from "sweetalert";
-
-import api from "../../services/api";
-
 import "./styles.css";
 import "../../assets/styles/global.css";
+import { authLogin } from "../../store/fetchActions";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [auth, setAuth] = useState(false);
-  console.log(auth);
+  const [login, setLogin] = useState({ email: "", password: "" });
+  /* const [auth, setAuth] = useState(false); */
   const history = useHistory();
+  const dispatch = useDispatch();
+  const { isAuthenticated } = useSelector((state) => state.auth);
 
   const validation = () => {
-    api.get("/users").then((response) => {
-      const data = response.data;
-      console.log(data);
-      for (let i = 0; i < data.length; i++) {
-        if (data[i].email === email && data[i].password === password) {
-          setAuth(true);
-          return history.push("userindex");
-        } else {
-          return swal(
-            "Erro!",
-            "Confira seus dados e tente novamente.",
-            "green"
-          );
-        }
-      }
-    });
+    dispatch(authLogin(login));
+    if (isAuthenticated) {
+      history.push("userindex");
+    } else {
+      swal("Erro!", "Confira seus dados e tente novamente.");
+    }
   };
   return (
     <>
@@ -42,13 +32,13 @@ const Login = () => {
           <div className="login-input">
             <div className="login-email">
               <p>E-mail</p>
-              <input type="text" onChange={(e) => setEmail(e.target.value)} />
+              <input type="text" onChange={(e) => setLogin({ ...login, email: e.target.value })} />
             </div>
             <div className="login-password">
               <p>Senha</p>
               <input
                 type="password"
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setLogin({ ...login, password: e.target.value })}
               />
 
               <Link className="link" to="/forgot">

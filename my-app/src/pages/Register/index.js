@@ -35,11 +35,9 @@ const Register = () => {
       params.city !== ""
     ) {
       if (params.password === params.passwordConf) {
-        console.log(params);
         api
           .post("users", params)
           .then(async (response) => {
-            console.log(response);
             swal("Pronto!", "Seu usuário foi criado!", "success");
             await new Promise((r) => setTimeout(r, 5000));
             history.push("/");
@@ -67,17 +65,13 @@ const Register = () => {
                 <p> Nome </p>
                 <input
                   type="text"
-                  onChange={(event) =>
-                    setParams({ ...params, name: event.target.value })
-                  }
+                  onChange={(event) => setParams({ ...params, name: event.target.value })}
                 />
 
                 <p> E-mail </p>
                 <input
                   type="text"
-                  onChange={(event) =>
-                    setParams({ ...params, email: event.target.value })
-                  }
+                  onChange={(event) => setParams({ ...params, email: event.target.value })}
                 />
               </div>
             </div>
@@ -86,27 +80,21 @@ const Register = () => {
                 <p> Senha </p>
                 <input
                   type="password"
-                  onChange={(event) =>
-                    setParams({ ...params, password: event.target.value })
-                  }
+                  onChange={(event) => setParams({ ...params, password: event.target.value })}
                 />
               </div>
               <div className="block">
                 <p> Repetir sua senha </p>
                 <input
                   type="password"
-                  onChange={(event) =>
-                    setParams({ ...params, passwordConf: event.target.value })
-                  }
+                  onChange={(event) => setParams({ ...params, passwordConf: event.target.value })}
                 />
               </div>
               <div className="block">
                 <p> Celular </p>
                 <input
                   type="number"
-                  onChange={(event) =>
-                    setParams({ ...params, cell: event.target.value })
-                  }
+                  onChange={(event) => setParams({ ...params, cell: event.target.value })}
                 />
               </div>
             </div>
@@ -115,9 +103,7 @@ const Register = () => {
               <p> Nome do centro </p>
               <input
                 type="text"
-                onChange={(event) =>
-                  setParams({ ...params, center: event.target.value })
-                }
+                onChange={(event) => setParams({ ...params, center: event.target.value })}
               />
 
               <div className="dual-block">
@@ -125,18 +111,14 @@ const Register = () => {
                   <p> Cidade </p>
                   <input
                     type="text"
-                    onChange={(event) =>
-                      setParams({ ...params, city: event.target.value })
-                    }
+                    onChange={(event) => setParams({ ...params, city: event.target.value })}
                   />
                 </div>
                 <div className="block">
                   <p> Estado </p>
                   <input
                     type="text"
-                    onChange={(event) =>
-                      setParams({ ...params, state: event.target.value })
-                    }
+                    onChange={(event) => setParams({ ...params, state: event.target.value })}
                   />
                 </div>
               </div>

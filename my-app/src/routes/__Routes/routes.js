@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Landing from "../../pages/Landing";
 import About from "../../pages/About";
@@ -45,12 +45,8 @@ const Routes = () => {
         <Route path="/searchresults" exact={true} component={SearchResults} />
 
         <PrivateRoute path="/userindex" exact={true} component={UserIndex} />
-        <PrivateRoute
-          path="/usernewitem"
-          exact={true}
-          component={UserNewItem}
-        />
-        <Route path="/usersearch" exact={true} component={UserSearch} />
+        <PrivateRoute path="/usernewitem" exact={true} component={UserNewItem} />
+        <PrivateRoute path="/usersearch" exact={true} component={UserSearch} />
       </Switch>
     </BrowserRouter>
   );
