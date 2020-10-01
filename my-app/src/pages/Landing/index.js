@@ -1,12 +1,22 @@
 import React from "react";
 import Header from "../../components/PageMenuHeader/Header";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+import { useSelector } from "react-redux";
 import { LockOpen, Search } from "@material-ui/icons";
 
 import "./styles.css";
 import "../../assets/styles/global.css";
 
 const Landing = () => {
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  const history = useHistory();
+  const verifyAuth = () => {
+    if (isAuthenticated) {
+      history.push("userindex");
+    } else {
+      history.push("login");
+    }
+  };
   return (
     <>
       <Header />
@@ -28,19 +38,15 @@ const Landing = () => {
         </div>
 
         <div className="actions-app">
-          <Link to="/search">
-            <button>
-              <Search style={{ color: "#FFF", marginRight: 10 }} />
-              <p>Buscar por um componente</p>
-            </button>
-          </Link>
-          <div className="divider-app"></div>
-          <Link to="/login">
-            <button>
-              <LockOpen style={{ color: "#FFF", marginRight: 10 }} />
-              <p>Fazer login</p>
-            </button>
-          </Link>
+          <button onClick={() => history.push("search")}>
+            <Search style={{ color: "#FFF", marginRight: 10 }} />
+            <p>Buscar por um componente</p>
+          </button>
+
+          <button onClick={verifyAuth}>
+            <LockOpen style={{ color: "#FFF", marginRight: 10 }} />
+            <p>Fazer login</p>
+          </button>
         </div>
       </div>
     </>

@@ -22,6 +22,7 @@ input:focus {
   margin: 0;
   padding: 0;
   border: 0;
+  outline: 0;
 }
 a {
   text-decoration: none;
@@ -36,8 +37,14 @@ body {
   background: #f0f0f5;
   font-family: "Poppins", sans-serif;
 }
-button {
+button,
+input,
+textarea {
   font-family: "Poppins";
+}
+textarea {
+  padding-left: 3px;
+  padding-top: 3px;
 }
 select {
   font-family: "Poppins";

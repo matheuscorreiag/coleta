@@ -28,7 +28,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-.actions-app a button {
+.actions-app button {
   display: flex;
   align-items: center;
   flex-direction: row;
@@ -43,21 +43,21 @@ body {
   font-weight: bold;
   text-align: center;
 }
-.actions-app a button p {
+.actions-app button p {
   font-size: 2vh;
   color: var(--white);
 }
-.actions-app a button img {
+.actions-app button img {
   grid-area: logo;
   width: 30px;
   height: auto;
   filter: invert();
 }
-.actions-app a button:hover {
+.actions-app button:hover {
   cursor: pointer;
   background-color: var(--dark-green);
 }
-.actions-app a {
+.actions-app button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,9 +69,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
   }
-  .actions-app a {
-    height: 100px;
-    margin-right: 0;
+  .actions-app button {
+    margin: 3px 0;
   }
   .mid-app .wrapper-app img {
     width: 40vh;
@@ -87,7 +86,7 @@ body {
 
 /* ----------- 450 - 650px ----------- */
 @media screen and (min-width: 456px) and (max-width: 659px) {
-  .actions-app a button {
+  .actions-app button {
     min-width: 100px;
   }
   .mid-app .title-app h1 {
@@ -106,7 +105,7 @@ body {
   .mid-app .wrapper-app .title-app p {
     font-size: 2rem;
   }
-  .actions-app a button {
+  .actions-app button {
     width: 40vw;
     height: 15vh;
     font-size: 1.2rem;
@@ -121,7 +120,7 @@ body {
   .mid-app .wrapper-app .title-app p {
     font-size: 2rem;
   }
-  .actions-app a button {
+  .actions-app button {
     width: 40vw;
     height: 15vh;
     font-size: 1.2rem;

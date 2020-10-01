@@ -28,8 +28,7 @@
 .top-search a img {
   width: 30px;
   height: 30px;
-  filter: invert(78%) sepia(11%) saturate(1185%) hue-rotate(100deg)
-    brightness(86%) contrast(82%);
+  filter: invert(78%) sepia(11%) saturate(1185%) hue-rotate(100deg) brightness(86%) contrast(82%);
 }
 @media screen and (max-width: 450px) {
   .top-search img {
