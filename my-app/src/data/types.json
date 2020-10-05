@@ -1,15 +1,32 @@
 {
-  "types": [
-    { "type": 1, "name": "Computador completo" },
-    { "type": 2, "name": "Gabinete" },
-    { "type": 3, "name": "Monitor" },
-    { "type": 4, "name": "Mouse" },
-    { "type": 5, "name": "Teclado" },
-    { "type": 6, "name": "Impressora e Scanner" },
-    { "type": 7, "name": "Fax" },
-    { "type": 8, "name": "Telefone" },
-    { "type": 9, "name": "Caixa de Som" },
-    { "type": 10, "name": "Estabilizador, Nobreak e Fonte" },
-    { "type": 11, "name": "Outros(Cabos e Peças)" }
+  "groups": [
+    {
+      "id": 1,
+      "type": "A",
+      "category": "Grandes Eletrodomésticos",
+      "group": [
+        { "id": 1, "name": "Geladeira" },
+        { "id": 2, "name": "Fogão" },
+        { "id": 3, "name": "Microondas" }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "C",
+      "category": "Equipamentos informáticos e de telecomunicações",
+      "group": [
+        { "id": 1, "name": "Computador completo" },
+        { "id": 2, "name": "Gabinete" },
+        { "id": 3, "name": "Monitor" },
+        { "id": 4, "name": "Mouse" },
+        { "id": 5, "name": "Teclado" },
+        { "id": 6, "name": "Impressora e Scanner" },
+        { "id": 7, "name": "Fax" },
+        { "id": 8, "name": "Telefone" },
+        { "id": 9, "name": "Caixa de Som" },
+        { "id": 10, "name": "Estabilizador, Nobreak e Fonte" },
+        { "id": 11, "name": "Outros(Cabos e Peças)" }
+      ]
+    }
   ]
 }

@@ -1,26 +1,24 @@
+.usernewitem {
+  height: 100vh !important;
+}
 .usernewitem-page {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 100px;
+  padding-left: 15px;
 }
 .usernewitem-container {
-  width: 80vw;
-  height: 800px;
+  width: 100vw;
   max-width: 700px;
   background-color: var(--white);
-  border-radius: 5px;
+  border-left: 1px solid var(--light-green);
 }
-.usernewitem {
+.usernewitem-form {
   width: 80vw;
-  height: 400;
 }
-.usernewitem h1 {
+.usernewitem-form h1 {
   color: var(--light-brown);
   padding: 5px 0px 0px 10px;
   font-size: 1.5rem;
 }
-.usernewitem h2 {
+.usernewitem-form h2 {
   color: var(--light-brown);
   padding: 5px 0px 0px 10px;
   font-size: 1.2rem;
@@ -88,7 +86,6 @@
   width: 100%;
   height: 100px;
   display: flex;
-  align-items: center;
   justify-content: space-around;
 }
 .buttons-container button {
@@ -106,23 +103,29 @@
 @media screen and (min-width: 800px) {
   .usernewitem-container {
     width: 880px;
-    height: 800 px;
   }
-  .usernewitem {
+  .usernewitem-page {
+    padding-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .usernewitem-form {
     padding: 50px 0px 0px 50px;
     width: 600px;
     height: 550px;
+    overflow: scroll;
   }
   .newitemform {
     margin: 0;
     height: 600px;
   }
-  .usernewitem h1 {
+  .usernewitem-form h1 {
     font-size: 30px;
     padding: 0;
     padding-bottom: 30px;
   }
-  .usernewitem h2 {
+  .usernewitem-form h2 {
     font-size: 21px;
     padding: 0;
     padding-bottom: 10px;

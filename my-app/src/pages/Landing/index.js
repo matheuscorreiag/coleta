@@ -42,7 +42,7 @@ const Landing = () => {
             <Search style={{ color: "#FFF", marginRight: 10 }} />
             <p>Buscar por um componente</p>
           </button>
-          c
+
           <button onClick={verifyAuth}>
             <LockOpen style={{ color: "#FFF", marginRight: 10 }} />
             <p>Fazer login</p>

@@ -44,7 +44,7 @@ const SearchCards = () => {
   }, [dispatch]); //fix warning
   return (
     <>
-      <div id="user" className="search-container ">
+      {/*   <div id="user" className="search-container ">
         <div className="input-button">
           <input
             type="text"
@@ -58,7 +58,7 @@ const SearchCards = () => {
       </div>
 
       {items.map((item) => (
-        <div className="results-container ">
+        <div className="results-container">
           <div className="modal-overlay">
             <div onLoad={incrementId} className="card" onClick={() => modal(items.indexOf(item))}>
               <div className="middle-align">
@@ -72,9 +72,8 @@ const SearchCards = () => {
               <div className="middle-align">
                 <div className="description-container">
                   <React.Fragment key={item.id}>
-                    <p>Descrição: {item.description}</p>
+                    <p>Categoria: {item.category}</p>
                     <p>Marca: {item.brand}</p>
-                    {/* <p>Local: {item.comments}</p> */}
                   </React.Fragment>
                 </div>
               </div>
@@ -95,7 +94,7 @@ const SearchCards = () => {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
     </>
   );
 };
