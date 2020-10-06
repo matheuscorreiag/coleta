@@ -4,25 +4,39 @@ module.exports = {
   async index(req, res) {
     const { search } = req.query;
 
-    const results = await knex("items").where(
-      "description",
-      "like",
-      `%${search}%`
-    );
+    const results = await knex("items"); /* .where("category", "like", `%${search}%`); */
 
     return res.json(results);
   },
 
   async create(req, res, next) {
     try {
-      const { description, brand, image, situation, comments } = req.body;
-
-      await knex("items").insert({
-        description,
+      const {
+        category,
+        group,
         brand,
         image,
-        situation,
         comments,
+        origin,
+        tipping,
+        model,
+        serial,
+        weight,
+        condition,
+      } = req.body;
+
+      await knex("items").insert({
+        category,
+        group,
+        brand,
+        image,
+        comments,
+        origin,
+        tipping,
+        model,
+        serial,
+        weight,
+        condition,
       });
       return res.status(201).send();
     } catch (error) {

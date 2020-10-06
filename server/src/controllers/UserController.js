@@ -11,7 +11,7 @@ module.exports = {
   },
   async create(req, res, next) {
     try {
-      const { name, password, email, cell, center, city, state } = req.body;
+      const { name, password, email, cell, center, city, state, flag } = req.body;
 
       await knex("users").insert({
         name,
@@ -21,6 +21,7 @@ module.exports = {
         center,
         city,
         state,
+        flag,
       });
       return res.status(201).send();
     } catch (error) {

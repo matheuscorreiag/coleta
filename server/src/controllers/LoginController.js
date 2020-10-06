@@ -1,4 +1,27 @@
-const service = require("../services/login.service");
+const knex = require("../database");
+const jwt = require("jsonwebtoken");
+
+module.exports = {
+  async authenticate(req, res, next) {
+    const { email, password } = req.body;
+
+    try {
+      const db = await knex("users");
+
+      const user = db.find((user) => user.password === password && user.email === email);
+
+      if (user) {
+        const token = await jwt.sign({ email }, "configurar");
+        return res.json({ token, user });
+      } else {
+        return res.json("error");
+      }
+    } catch (error) {
+      return res.json(error);
+    }
+  },
+};
+/* const service = require("../services/login.service");
 
 class LoginController {
   constructor(loginService) {
@@ -12,3 +35,4 @@ class LoginController {
 }
 
 module.exports = new LoginController(service);
+ */

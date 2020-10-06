@@ -1,4 +1,4 @@
-const jwt = require("jsonwebtoken");
+/* const jwt = require("jsonwebtoken");
 
 const db = [{ email: "admin", password: "1234" }];
 
@@ -14,3 +14,4 @@ const authenticate = async ({ username, password }) => {
 module.exports = {
   authenticate,
 };
+ */

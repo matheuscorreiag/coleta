@@ -15,5 +15,5 @@ routes.post("/items", ItemsController.create);
 routes.delete("/items/:id", ItemsController.delete);
 routes.get("/searchresults", ItemsController.index);
 
-routes.post("/login", LoginController.login);
+routes.post("/login", LoginController.authenticate);
 export default routes;
