@@ -25,6 +25,7 @@ const Login = () => {
           history.push("userindex");
         })
         .catch((err) => {
+          console.log("CHEGUEI");
           swal("Erro!", "Confira seus dados e tente novamente.");
           console.log(err);
         });

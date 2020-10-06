@@ -44,7 +44,7 @@ const SearchCards = () => {
   }, [dispatch]); //fix warning
   return (
     <>
-      {/*   <div id="user" className="search-container ">
+      <div id="user" className="search-container ">
         <div className="input-button">
           <input
             type="text"
@@ -77,11 +77,11 @@ const SearchCards = () => {
                   </React.Fragment>
                 </div>
               </div>
-              <div className="middle-align">
+              {/* <div className="middle-align">
                 <div className="state-container">
                   <p>Reuso</p>
                 </div>
-              </div>
+              </div> */}
             </div>
 
             <div id="modal-buttons" className="modal-buttons">
@@ -94,7 +94,7 @@ const SearchCards = () => {
             </div>
           </div>
         </div>
-      ))} */}
+      ))}
     </>
   );
 };
