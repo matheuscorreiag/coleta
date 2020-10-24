@@ -4,7 +4,7 @@ const INITIAL_STATE = [];
 
 export const addItem = createAction("ADD_ITEM");
 
-export const addItems = createAction("ADD_CARS");
+export const addItems = createAction("ADD_ITEMS");
 
 export default createReducer(INITIAL_STATE, {
   [addItem.type]: (state, action) => [...state, action.payload],

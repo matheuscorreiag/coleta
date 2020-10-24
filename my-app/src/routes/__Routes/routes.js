@@ -1,6 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Landing from "../../pages/Landing";
 import About from "../../pages/About";
@@ -11,22 +10,8 @@ import SearchResults from "../../pages/SearchResults";
 import UserIndex from "../../pages/UserIndex/index";
 import UserNewItem from "../../pages/UserNewItem";
 import UserSearch from "../../pages/UserSearch";
-
-const PrivateRoute = ({ component: Component, ...rest }) => {
-  const { isAuthenticated } = useSelector((state) => state.auth);
-  return (
-    <Route
-      {...rest}
-      render={(props) =>
-        isAuthenticated ? (
-          <Component {...props} />
-        ) : (
-          <Redirect to={{ pathname: "/", state: { from: props.location } }} />
-        )
-      }
-    />
-  );
-};
+import PrivateRoute from "../_PrivateRoutes";
+import UserInfoIndex from "../../pages/UserInfoIndex";
 
 const Routes = () => {
   return (
@@ -37,16 +22,11 @@ const Routes = () => {
         <Route path="/search" exact={true} component={Search} />
         <Route path="/login" exact={true} component={Login} />
         <Route path="/register" exact={true} component={Register} />
-        {/*         <Route
-          path="/completeregister"
-          exact={true}
-          component={CompleteRegister}
-        /> */}
         <Route path="/searchresults" exact={true} component={SearchResults} />
-
         <PrivateRoute path="/userindex" exact={true} component={UserIndex} />
         <PrivateRoute path="/usernewitem" exact={true} component={UserNewItem} />
         <PrivateRoute path="/usersearch" exact={true} component={UserSearch} />
+        <PrivateRoute path="/userinfoindex" exact={true} component={UserInfoIndex} />
       </Switch>
     </BrowserRouter>
   );

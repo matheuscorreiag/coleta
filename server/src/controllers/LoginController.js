@@ -9,10 +9,11 @@ module.exports = {
       const db = await knex("users");
 
       const user = db.find((user) => user.password === password && user.email === email);
+      const typeOfUser = user.flag;
 
       if (user) {
         const token = await jwt.sign({ email }, "configurar");
-        return res.json({ token, user });
+        return res.json({ token, user, typeOfUser });
       } else {
         return res.json("error");
       }
@@ -21,18 +22,3 @@ module.exports = {
     }
   },
 };
-/* const service = require("../services/login.service");
-
-class LoginController {
-  constructor(loginService) {
-    this.loginService = loginService;
-  }
-  login = (req, res) => {
-    this.loginService
-      .authenticate(req.body)
-      .then((user) => (user ? res.json(user) : res.status(400)));
-  };
-}
-
-module.exports = new LoginController(service);
- */

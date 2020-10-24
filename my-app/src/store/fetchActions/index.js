@@ -2,6 +2,7 @@ import api from "../../services/api";
 
 import { addItems, addItem } from "../ducks/items";
 import { login } from "../ducks/auth";
+import { userBasic } from "../ducks/userType";
 
 export const getAllItems = (search) => {
   return (dispatch) => {
@@ -21,3 +22,5 @@ export const addItemFetch = (item) => {
 };
 
 export const authFetch = () => (dispatch) => dispatch(login());
+
+/* export const userType = () => (dispatch) => dispatch(userBasic()); */

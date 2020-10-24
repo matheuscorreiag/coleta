@@ -70,7 +70,7 @@ const UserNewItem = () => {
                 {data.map((category) =>
                   category.group.map(
                     (group) =>
-                      groupList == category.id && (
+                      groupList === category.id && (
                         <option key={group.id} value={group.id}>
                           {group.name}
                         </option>

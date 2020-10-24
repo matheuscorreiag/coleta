@@ -7,6 +7,6 @@ export const login = createAction("LOGIN");
 export const logout = createAction("LOGOUT");
 
 export default createReducer(INITIAL_STATE, {
-  [login.type]: (state, action) => ({ ...state, isAuthenticated: true }),
-  [logout.type]: (state, action) => ({ ...state, isAuthenticated: false }),
+  [login.type]: (state) => ({ ...state, isAuthenticated: true }),
+  [logout.type]: (state) => ({ ...state, isAuthenticated: false }),
 });
