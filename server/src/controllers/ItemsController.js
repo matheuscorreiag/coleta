@@ -4,7 +4,10 @@ module.exports = {
   async index(req, res) {
     const { search } = req.query;
 
-    const results = await knex("items"); /* .where("category", "like", `%${search}%`); */
+    const results = await knex("items").where(
+      "broken",
+      1
+    ); /* .where("category", "like", `%${search}%`); */
 
     return res.json(results);
   },
@@ -23,6 +26,7 @@ module.exports = {
         serial,
         weight,
         condition,
+        broken,
       } = req.body;
 
       await knex("items").insert({
@@ -37,6 +41,7 @@ module.exports = {
         serial,
         weight,
         condition,
+        broken,
       });
       return res.status(201).send();
     } catch (error) {
@@ -50,6 +55,17 @@ module.exports = {
       await knex("items").where({ id }).del();
 
       return res.send();
+    } catch (error) {
+      next(error);
+    }
+  },
+  async ready(req, res, next) {
+    try {
+      const { search } = req.query;
+
+      const results = await knex("items").where("broken", 0);
+
+      return res.json(results);
     } catch (error) {
       next(error);
     }

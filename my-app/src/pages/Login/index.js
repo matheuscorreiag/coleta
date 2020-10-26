@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { userBasic, userInfo } from "../../store/ducks/userType";
 import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import swal from "sweetalert";
 /* import { authLogin } from "../../store/fetchActions"; */
-import { authFetch, userType } from "../../store/fetchActions";
+import { authFetch } from "../../store/fetchActions";
 import api from "../../services/api";
 
 import "./styles.css";
@@ -15,8 +15,6 @@ const Login = () => {
   const [login, setLogin] = useState({ email: "", password: "" });
   const history = useHistory();
   const dispatch = useDispatch();
-
-  const { userId } = useSelector((state) => state.permissions);
 
   const signIn = (e) => {
     e.preventDefault();
@@ -38,13 +36,14 @@ const Login = () => {
               case 2:
                 dispatch(userInfo());
                 history.push("userinfoindex");
-
                 break;
               case 3:
                 console.log("3");
                 break;
               case 4:
                 console.log("4");
+                break;
+              default:
                 break;
             }
           } else {

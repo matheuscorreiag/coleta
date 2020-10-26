@@ -28,7 +28,12 @@ const UserNavBar = () => {
         <div className="top-icons">
           <Home onClick={() => history.push("/userindex")} />
 
-          <Folder onClick={() => history.push("/usersearch")} />
+          <Folder
+            onClick={() => {
+              /* if (userId !== 1) {} */
+              history.push("/usersearch");
+            }}
+          />
 
           <Add onClick={() => history.push("/usernewitem")} />
         </div>

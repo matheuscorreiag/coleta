@@ -2,12 +2,21 @@ import api from "../../services/api";
 
 import { addItems, addItem } from "../ducks/items";
 import { login } from "../ducks/auth";
-import { userBasic } from "../ducks/userType";
 
-export const getAllItems = (search) => {
+export const getAllBrokenItems = (search) => {
   return (dispatch) => {
     api
-      .get(`items?search=${search}`)
+      .get(`items-broke?search=${search}`)
+      .then((res) => {
+        dispatch(addItems(res.data));
+      })
+      .catch(console.log);
+  };
+};
+export const getAllReadyItems = (search) => {
+  return (dispatch) => {
+    api
+      .get(`items-ready?search=${search}`)
       .then((res) => {
         dispatch(addItems(res.data));
       })

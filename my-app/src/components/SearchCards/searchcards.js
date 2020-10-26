@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getAllItems } from "../../store/fetchActions";
+import { getAllBrokenItems, getAllReadyItems } from "../../store/fetchActions";
 
 import "./styles.css";
-
 const SearchCards = () => {
   const items = useSelector((state) => state.items); //selecionando
   const [search, setSearch] = useState(localStorage.getItem("@coleta-search"));
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.auth);
+  const { userId } = useSelector((state) => state.permissions);
 
   const modal = (index) => {
     var element = document.querySelectorAll(".modal-overlay");
@@ -40,8 +40,15 @@ const SearchCards = () => {
   };
   useEffect(() => {
     //disparando action de chamada na api
-    dispatch(getAllItems(search)); //eslint-disable-next-line
+    console.log(userId);
+    if (userId === 1 || userId === undefined || userId === 0) {
+      dispatch(getAllReadyItems(search));
+    } else if (userId === 2) {
+      dispatch(getAllBrokenItems(search));
+    } //eslint-disable-next-line
   }, [dispatch]); //fix warning
+
+  console.log(items);
   return (
     <>
       <div id="user" className="search-container ">

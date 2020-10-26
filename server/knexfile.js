@@ -1,23 +1,23 @@
 module.exports = {
-    development: {
-        client: 'pg',
-        connection: {
-            database: 'db_my-app',
-            user: 'postgres',
-            password: 'mcorreias'
-        },
-        migrations: {
-            tableName: 'knex_migrations',
-            directory: `${__dirname}/src/database/migrations`
-        },
-        seeds: {
-            directory: `${__dirname}/src/database/seeds`
-        },
+  development: {
+    client: "pg",
+    connection: {
+      database: "postgres",
+      user: "postgres",
+      password: "mcorreias",
     },
-    onUpdateTrigger: table => `
+    migrations: {
+      tableName: "knex_migrations",
+      directory: `${__dirname}/src/database/migrations`,
+    },
+    seeds: {
+      directory: `${__dirname}/src/database/seeds`,
+    },
+  },
+  onUpdateTrigger: (table) => `
     CREATE TRIGGER ${table}_updated_at
     BEFORE UPDATE ON ${table}
     FOR EACH ROW
     EXECUTE PROCEDURE on_update_timestamp();
-    `
-}
+    `,
+};

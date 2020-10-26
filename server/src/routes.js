@@ -10,7 +10,8 @@ routes.post("/users", UserController.create);
 routes.put("/users/:id", UserController.update);
 routes.delete("/users/:id", UserController.delete);
 
-routes.get("/items", ItemsController.index);
+routes.get("/items-ready", ItemsController.ready);
+routes.get("/items-broke", ItemsController.index);
 routes.post("/items", ItemsController.create);
 routes.delete("/items/:id", ItemsController.delete);
 routes.get("/searchresults", ItemsController.index);

@@ -10,6 +10,7 @@ import "../../assets/styles/global.css";
 const Landing = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const history = useHistory();
+
   const verifyAuth = () => {
     if (isAuthenticated) {
       history.push("userindex");

@@ -7,7 +7,7 @@ const UserIndex = () => {
   return (
     <>
       <UserNavBar />
-      <div className="main"></div>
+      <div className="main">USERINDEX</div>
     </>
   );
 };

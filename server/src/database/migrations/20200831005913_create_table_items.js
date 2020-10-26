@@ -12,6 +12,7 @@ exports.up = (knex) =>
     table.text("serial").notNullable();
     table.text("weight").notNullable();
     table.text("condition").notNullable();
+    table.integer("broken").notNullable();
 
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table.timestamp("updated_at").defaultTo(knex.fn.now());
