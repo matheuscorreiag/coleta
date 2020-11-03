@@ -31,5 +31,3 @@ export const addItemFetch = (item) => {
 };
 
 export const authFetch = () => (dispatch) => dispatch(login());
-
-/* export const userType = () => (dispatch) => dispatch(userBasic()); */

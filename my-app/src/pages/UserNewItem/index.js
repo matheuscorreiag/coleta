@@ -17,11 +17,18 @@ const UserNewItem = () => {
 
   const data = db.groups;
   const [params, setParams] = useState({
-    description: "",
+    category: "",
+    group: 0,
     brand: "",
-    situation: 0,
-    comments: "",
     image: "",
+    comments: "",
+    origin: "",
+    tipping: "",
+    model: "",
+    serial: "",
+    weight: "",
+    condition: "",
+    broken: 1,
   });
   const [groupList, setGroupList] = useState(0);
 
@@ -33,11 +40,17 @@ const UserNewItem = () => {
   const onSubmit = () => {
     dispatch(addItemFetch(params));
     setParams({
-      description: "",
+      category: "",
+      group: 0,
       brand: "",
-      situation: 0,
-      comments: "",
       image: "",
+      comments: "",
+      origin: "",
+      tipping: "",
+      model: "",
+      serial: "",
+      weight: "",
+      condition: "",
     });
     swal("Pronto!", "Novo equipamento cadastrado com sucesso", "success");
     history.push("/searchresults");
@@ -53,16 +66,24 @@ const UserNewItem = () => {
 
             <div className="newitemform">
               Categoria
-              <select onChange={(e) => handleGroup(e)}>
+              <input
+                type="text"
+                onChange={(event) => setParams({ ...params, category: event.target.value })}
+              />
+              {/* <select onChange={(e) => handleGroup(e)}>
                 <option value={0}> Selecione um grupo</option>
                 {data.map((category) => (
                   <option key={category.type} value={category.id} name={category.category}>
                     {category.category}
                   </option>
                 ))}
-              </select>
+              </select> */}
               Grupo
-              <select
+              <input
+                type="text"
+                onChange={(event) => setParams({ ...params, group: event.target.value })}
+              />
+              {/* <select
                 onChange={(event) => setParams({ ...params, description: event.target.value })}
               >
                 <option value={0}> Selecione um tipo de componente</option>
@@ -77,11 +98,15 @@ const UserNewItem = () => {
                       )
                   )
                 )}
-              </select>
+              </select> */}
               Marca
               <input
                 type="text"
                 onChange={(event) => setParams({ ...params, brand: event.target.value })}
+              />
+              <input
+                type="text"
+                onChange={(event) => setParams({ ...params, origin: event.target.value })}
               />
               Origem
               <input
@@ -108,13 +133,13 @@ const UserNewItem = () => {
                 type="text"
                 onChange={(event) => setParams({ ...params, brand: event.target.value })}
               />
-              Situação
+              {/* Situação
               <select onChange={(event) => setParams({ ...params, situation: event.target.value })}>
                 <option value={0}> Selecione a situação do equipamento</option>
                 <option value={1}> Reciclagem</option>
                 <option value={2}> Reuso</option>
                 <option value={3}> Doação</option>
-              </select>
+              </select> */}
               <div className="notes">
                 Comentários (opcional)
                 <textarea
@@ -123,12 +148,16 @@ const UserNewItem = () => {
                 ></textarea>
               </div>
               <div className="uploadImage-container">
-                <div className="uploadImage">
+                {/* <div className="uploadImage">
                   <Add />
-                </div>
-                <div className="uploadImage-text">
-                  <span>Adicione uma imagem</span>
-                </div>
+                </div> */}
+                <span className="uploadImage-text"> Adicione uma imagem</span>
+                <input
+                  type="file"
+                  onChange={(event) => setParams({ ...params, image: event.target.files[0] })}
+                />
+                {console.log(params.image)}
+                {/* <div className="uploadImage-text"></div> */}
               </div>
             </div>
           </div>

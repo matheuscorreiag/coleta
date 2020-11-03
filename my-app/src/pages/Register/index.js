@@ -4,10 +4,11 @@ import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import swal from "sweetalert";
 
 import api from "../../services/api";
+/* 
+const bcrypt = require("bcryptjs"); */
 
 import "./styles.css";
 import "../../assets/styles/global.css";
-
 const Register = () => {
   const history = useHistory();
   const [params, setParams] = useState({
@@ -20,6 +21,7 @@ const Register = () => {
     passwordConf: "",
     center: "",
     state: "",
+    flag: 1,
   });
 
   const setRegisterParams = (event) => {
@@ -50,6 +52,7 @@ const Register = () => {
       }
     }
   };
+
   return (
     <>
       <ArrowHeader />

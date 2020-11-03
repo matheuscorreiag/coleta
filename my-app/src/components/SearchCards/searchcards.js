@@ -41,7 +41,7 @@ const SearchCards = () => {
   useEffect(() => {
     //disparando action de chamada na api
     console.log(userId);
-    if (userId === 1 || userId === undefined || userId === 0) {
+    if (userId === 1 || userId === 0) {
       dispatch(getAllReadyItems(search));
     } else if (userId === 2) {
       dispatch(getAllBrokenItems(search));
@@ -70,10 +70,7 @@ const SearchCards = () => {
             <div onLoad={incrementId} className="card" onClick={() => modal(items.indexOf(item))}>
               <div className="middle-align">
                 <div className="img-container">
-                  <img
-                    src={require("../../assets/img/icons/1656641261586786442.svg")}
-                    alt="cgalogo"
-                  />
+                  <img src={item.image} alt="W3Schools.com" />
                 </div>
               </div>
               <div className="middle-align">
