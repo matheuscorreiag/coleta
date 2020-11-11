@@ -14,7 +14,7 @@ module.exports = {
     try {
       const { name, password, email, cell, center, city, state, flag } = req.body;
 
-      var hash = bcrypt.hashSync(password, 8);
+      const hash = bcrypt.hashSync(password, 8);
 
       await knex("users").insert({
         name,
@@ -36,11 +36,11 @@ module.exports = {
     try {
       const { name, password, email, cell, center, city, state } = req.body;
       const { id } = req.params;
-
+      const hash = bcrypt.hashSync(password, 8);
       await knex("users")
         .where({ id })
         .update({ name })
-        .update({ password })
+        .update({ password: hash })
         .update({ email })
         .update({ cell })
         .update({ center })

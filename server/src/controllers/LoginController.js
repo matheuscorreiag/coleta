@@ -1,19 +1,26 @@
 const knex = require("../database");
 const jwt = require("jsonwebtoken");
 
+const bcrypt = require("bcryptjs");
+
 module.exports = {
   async authenticate(req, res, next) {
     const { email, password } = req.body;
 
     try {
-      const db = await knex("users");
+      const user = await knex("users").where("email", email);
 
-      const user = db.find((user) => user.password === password && user.email === email);
-      const typeOfUser = user.flag;
+      //console.log(user[0].password);
+      if (!(await bcrypt.compare(password, user[0].password))) {
+        console.log("deu erro");
+      }
+      //const user = db.find((user) => compare && user.email === email);
+
+      const typeOfUser = user[0].flag;
 
       if (user) {
         const token = await jwt.sign({ email }, "configurar");
-        return res.json({ token, user, typeOfUser });
+        return res.json({ token, user: user[0], typeOfUser });
       } else {
         return res.json("error");
       }
