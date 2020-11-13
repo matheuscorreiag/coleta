@@ -4,7 +4,7 @@ const CUSTOM_FUNCTIONS = `
 CREATE OR REPLACE FUNCTION on_update_timestamp()
 RETURNS trigger AS $$
 BEGIN
-    NEW.updazted_at = now();
+    NEW.updated_at = now();
     RETURN NEW;
 END;
 $$ language 'plpgsql';
