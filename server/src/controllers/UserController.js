@@ -34,7 +34,7 @@ module.exports = {
   },
   async update(req, res, next) {
     try {
-      const { name, password, email, cell, center, city, state } = req.body;
+      const { name, password, email, cell, center, city, state, flag } = req.body;
       const { id } = req.params;
       const hash = bcrypt.hashSync(password, 8);
       await knex("users")
@@ -45,7 +45,8 @@ module.exports = {
         .update({ cell })
         .update({ center })
         .update({ city })
-        .update({ state });
+        .update({ state })
+        .update({ flag });
 
       return res.send();
     } catch (error) {

@@ -8,12 +8,12 @@ const ArrowHeader = () => {
     <div className="top-search">
       <img src={require("../../assets/img/cgalogo.png")} alt="cgalogo" />
       <div className="container-back-search">
-        <Link to="/">
-          <div className="link-search">
+        <div className="link-search">
+          <Link to="/">
             <img src={require("../../assets/img/icons/seta.svg")} alt="seta" />
             <p>Voltar para o início</p>
-          </div>
-        </Link>
+          </Link>
+        </div>
       </div>
     </div>
   );
