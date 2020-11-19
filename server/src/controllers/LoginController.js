@@ -10,9 +10,8 @@ module.exports = {
     try {
       const user = await knex("users").where("email", email);
 
-      //console.log(user[0].password);
       if (!(await bcrypt.compare(password, user[0].password))) {
-        console.log("deu erro");
+        alert("Usuário ou senha incorreto");
       }
       //const user = db.find((user) => compare && user.email === email);
 

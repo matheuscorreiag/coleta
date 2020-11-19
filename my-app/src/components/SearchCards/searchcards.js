@@ -40,15 +40,12 @@ const SearchCards = () => {
   };
   useEffect(() => {
     //disparando action de chamada na api
-    console.log(userId);
     if (userId === 1 || userId === 0) {
       dispatch(getAllReadyItems(search));
     } else if (userId === 2) {
       dispatch(getAllBrokenItems(search));
     } //eslint-disable-next-line
-  }, [dispatch]); //fix warning
-
-  console.log(items);
+  }, [dispatch]); //tirar warning
   return (
     <>
       <div id="user" className="search-container ">
@@ -70,7 +67,7 @@ const SearchCards = () => {
             <div onLoad={incrementId} className="card" onClick={() => modal(items.indexOf(item))}>
               <div className="middle-align">
                 <div className="img-container">
-                  <img src={item.image} alt="W3Schools.com" />
+                  <img src={item.image} alt="test" />
                 </div>
               </div>
               <div className="middle-align">

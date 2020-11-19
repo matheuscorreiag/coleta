@@ -17,6 +17,8 @@ const UserNavBar = () => {
   const dispatch = useDispatch();
 
   const { isAuthenticated } = useSelector((state) => state.auth);
+  const { userId } = useSelector((state) => state.permissions);
+  console.log(userId);
 
   const logout = () => {
     isAuthenticated && dispatch(logoutService());
@@ -26,7 +28,19 @@ const UserNavBar = () => {
     <div className="sidebar-menu">
       <div id="sidebar" className="sidebar-icons">
         <div className="top-icons">
-          <Home onClick={() => history.push("/userindex")} />
+          <Home
+            onClick={() => {
+              if (userId === 1) {
+                history.push("/userindex");
+              }
+              if (userId === 2) {
+                history.push("/userinfoindex");
+              }
+              if (userId === 3) {
+                history.push("/useradmin");
+              }
+            }}
+          />
 
           <Folder
             onClick={() => {

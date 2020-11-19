@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { userBasic, userInfo } from "../../store/ducks/userType";
+import { userBasic, userInfo, userAdmin } from "../../store/ducks/userType";
 import ArrowHeader from "../../components/PageArrowHeader/ArrowHeader";
 import swal from "sweetalert";
 /* import { authLogin } from "../../store/fetchActions"; */
@@ -38,7 +38,8 @@ const Login = () => {
                 history.push("userinfoindex");
                 break;
               case 3:
-                console.log("3");
+                dispatch(userAdmin());
+                history.push("useradmin");
                 break;
               case 4:
                 console.log("4");

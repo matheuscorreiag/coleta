@@ -1,6 +1,7 @@
 import api from "../../services/api";
 
 import { addItems, addItem } from "../ducks/items";
+import { addUsers } from "../ducks/users";
 import { login } from "../ducks/auth";
 
 export const getAllBrokenItems = (search) => {
@@ -19,6 +20,16 @@ export const getAllReadyItems = (search) => {
       .get(`items-ready?search=${search}`)
       .then((res) => {
         dispatch(addItems(res.data));
+      })
+      .catch(console.log);
+  };
+};
+export const getAllUsers = () => {
+  return (dispatch) => {
+    api
+      .get("users")
+      .then((res) => {
+        dispatch(addUsers(res.data));
       })
       .catch(console.log);
   };
