@@ -11,7 +11,7 @@ exports.up = (knex) =>
       table.text("center").notNullable();
       table.text("city").notNullable();
       table.text("state").notNullable();
-      table.integer("flag").notNullable();
+      table.integer("userType").notNullable();
 
       table.timestamp("created_at").defaultTo(knex.fn.now());
       table.timestamp("updated_at").defaultTo(knex.fn.now());

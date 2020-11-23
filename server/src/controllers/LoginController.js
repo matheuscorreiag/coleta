@@ -15,7 +15,7 @@ module.exports = {
       }
       //const user = db.find((user) => compare && user.email === email);
 
-      const typeOfUser = user[0].flag;
+      const typeOfUser = user[0].userType;
 
       if (user) {
         const token = await jwt.sign({ email }, "configurar");

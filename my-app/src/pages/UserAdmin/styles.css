@@ -14,7 +14,7 @@
 .cards-admin {
   height: 100%;
   width: 90%;
-  border-radius: 10px;
+  border-radius: 8px;
   max-width: 820px;
 }
 .card-admin {
@@ -71,7 +71,7 @@
 
   background-color: var(--light-green);
   color: var(--white);
-  border-radius: 5px;
+  border-radius: 8px;
 }
 .accept-user button:hover {
   background-color: var(--dark-green);

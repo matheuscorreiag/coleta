@@ -12,7 +12,7 @@ module.exports = {
   },
   async create(req, res, next) {
     try {
-      const { name, password, email, cell, center, city, state, flag } = req.body;
+      const { name, password, email, cell, center, city, state, userType } = req.body;
 
       const hash = bcrypt.hashSync(password, 8);
 
@@ -24,7 +24,7 @@ module.exports = {
         center,
         city,
         state,
-        flag,
+        userType,
       });
       return res.status(201).send();
     } catch (error) {
@@ -34,7 +34,7 @@ module.exports = {
   },
   async update(req, res, next) {
     try {
-      const { name, password, email, cell, center, city, state, flag } = req.body;
+      const { name, password, email, cell, center, city, state, userType } = req.body;
       const { id } = req.params;
       const hash = bcrypt.hashSync(password, 8);
       await knex("users")
@@ -46,7 +46,7 @@ module.exports = {
         .update({ center })
         .update({ city })
         .update({ state })
-        .update({ flag });
+        .update({ userType });
 
       return res.send();
     } catch (error) {

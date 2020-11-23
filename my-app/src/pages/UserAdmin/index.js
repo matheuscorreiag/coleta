@@ -30,7 +30,7 @@ const UserAdmin = () => {
               <div className="admin-user-data">
                 <span> Nome: {user.name}</span>
                 <span> E-mail: {user.email}</span>
-                <span> Tipo de usuário cadastrado: {user.flag} </span>
+                <span> Tipo de usuário cadastrado: {user.userType} </span>
               </div>
             </div>
 

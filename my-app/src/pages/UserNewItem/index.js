@@ -3,7 +3,7 @@ import UserNavBar from "../../components/UserNavBar/usernavbar";
 import Add from "@material-ui/icons/Add";
 import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItemFetch } from "../../store/fetchActions";
 
 import db from "../../data/types.json";
@@ -14,6 +14,7 @@ import "../../assets/styles/global.css";
 const UserNewItem = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const { userId } = useSelector((state) => state.permissions);
 
   const data = db.groups;
   const [params, setParams] = useState({
@@ -165,7 +166,23 @@ const UserNewItem = () => {
             <button className="confirm" onClick={onSubmit}>
               Confirmar
             </button>
-            <button className="cancel"> Cancelar</button>
+            <button
+              className="cancel"
+              onClick={() => {
+                if (userId === 1) {
+                  history.push("/userindex");
+                }
+                if (userId === 2) {
+                  history.push("/userinfoindex");
+                }
+                if (userId === 3) {
+                  history.push("/useradmin");
+                }
+              }}
+            >
+              {" "}
+              Cancelar
+            </button>
           </div>
         </div>
       </div>

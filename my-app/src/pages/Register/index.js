@@ -21,7 +21,7 @@ const Register = () => {
     passwordConf: "",
     center: "",
     state: "",
-    flag: 1,
+    userType: 1,
   });
 
   const setRegisterParams = (event) => {
