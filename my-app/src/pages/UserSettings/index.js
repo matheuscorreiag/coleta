@@ -24,6 +24,7 @@ const UserSettings = () => {
               <span> Celular </span>
               <input type="text" placeholder="celular" />
             </div>
+            <div className="divider"></div>
             <div className="span-input-row">
               <span> Perfil </span>
               <input type="text" placeholder="perfil" />
@@ -34,6 +35,7 @@ const UserSettings = () => {
               <span> Senha </span>
               <input type="text" placeholder="senha" />
             </div>
+            <div className="divider"></div>
             <div className="span-input-row">
               <span> Repetir senha </span>
               <input type="text" placeholder="repetir senha" />
@@ -49,6 +51,7 @@ const UserSettings = () => {
                   <span> Cidade </span>
                   <input type="text" placeholder="cidade" />
                 </div>
+                <div className="divider"></div>
                 <div className="span-input-row">
                   <span> Estado </span>
                   <input type="text" placeholder="estado" />

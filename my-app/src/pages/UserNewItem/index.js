@@ -55,130 +55,63 @@ const UserNewItem = () => {
     history.push("/searchresults");
   };
   return (
-    <div className="usernewitem">
+    <div className="usernewitem-page">
       <UserNavBar />
-      <div className="usernewitem-page">
-        <div className="usernewitem-container">
-          <div className="usernewitem-form">
-            <h1>Cadastrar componentes</h1>
-            <h2>Dados</h2>
-
-            <div className="newitemform">
-              Categoria
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, category: event.target.value })}
-              />
-              {/* <select onChange={(e) => handleGroup(e)}>
-                <option value={0}> Selecione um grupo</option>
-                {data.map((category) => (
-                  <option key={category.type} value={category.id} name={category.category}>
-                    {category.category}
-                  </option>
-                ))}
-              </select> */}
-              Grupo
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, group: event.target.value })}
-              />
-              {/* <select
-                onChange={(event) => setParams({ ...params, description: event.target.value })}
-              >
-                <option value={0}> Selecione um tipo de componente</option>
-
-                {data.map((category) =>
-                  category.group.map(
-                    (group) =>
-                      groupList === category.id && (
-                        <option key={group.id} value={group.id}>
-                          {group.name}
-                        </option>
-                      )
-                  )
-                )}
-              </select> */}
-              Marca
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, brand: event.target.value })}
-              />
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, origin: event.target.value })}
-              />
-              Origem
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, origin: event.target.value })}
-              />
-              Tombamento
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, tipping: event.target.value })}
-              />
-              Modelo
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, model: event.target.value })}
-              />
-              Numero de série
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, serial: event.target.value })}
-              />
-              Peso
-              <input
-                type="text"
-                onChange={(event) => setParams({ ...params, weight: event.target.value })}
-              />
-              {/* Situação
-              <select onChange={(event) => setParams({ ...params, situation: event.target.value })}>
-                <option value={0}> Selecione a situação do equipamento</option>
-                <option value={1}> Reciclagem</option>
-                <option value={2}> Reuso</option>
-                <option value={3}> Doação</option>
-              </select> */}
-              <div className="notes">
-                Comentários (opcional)
-                <textarea
-                  onChange={(event) => setParams({ ...params, comments: event.target.value })}
-                  placeholder="Insira informações adicionais"
-                ></textarea>
-              </div>
-              <div className="uploadImage-container">
-                {/* <div className="uploadImage">
-                  <Add />
-                </div> */}
-                <span className="uploadImage-text"> Adicione uma imagem</span>
-                <input
-                  type="file"
-                  onChange={(event) => setParams({ ...params, image: event.target.files[0] })}
-                />
-              </div>
+      <div className="newitem-bg">
+        <h1> Cadastrar componentes</h1>
+        <h2> Dados </h2>
+        <div className="newitem-form">
+          <div className="span-input-col">
+            <div className="span-input-row">
+              <span> Categoria </span>
+              <input placeholder="Categoria"></input>
+            </div>
+            <div className="divider"></div>
+            <div className="span-input-row">
+              <span> Grupo </span>
+              <input placeholder="Grupo"></input>
             </div>
           </div>
-          <div className="buttons-container">
-            <button className="confirm" onClick={onSubmit}>
-              Confirmar
-            </button>
-            <button
-              className="cancel"
-              onClick={() => {
-                if (userId === 1) {
-                  history.push("/userindex");
-                }
-                if (userId === 2) {
-                  history.push("/userinfoindex");
-                }
-                if (userId === 3) {
-                  history.push("/useradmin");
-                }
-              }}
-            >
-              {" "}
-              Cancelar
-            </button>
+          <div className="span-input-col">
+            <div className="span-input-row">
+              <span> Marca </span>
+              <input placeholder="Marca"></input>
+            </div>
+            <div className="divider"></div>
+            <div className="span-input-row">
+              <span> Origem </span>
+              <input placeholder="Origem"></input>
+            </div>
+          </div>
+          <div className="span-input-col">
+            <div className="span-input-row">
+              <span> Tombamento </span>
+              <input placeholder="Tombamento"></input>
+            </div>
+            <div className="divider"></div>
+            <div className="span-input-row">
+              <span> Número de série </span>
+              <input placeholder="Número de série"></input>
+            </div>
+          </div>
+          <div className="span-input-col">
+            <div className="span-input-row">
+              <span> Peso </span>
+              <input placeholder="Peso"></input>
+            </div>
+            <div className="divider"></div>
+            <div className="add-img">
+              <p> Adicione uma imagem</p>
+            </div>
+          </div>
+          <div className="confirm-cancel-buttons">
+            <div className="confirm-button">
+              <button type="button"> Confirmar</button>
+            </div>
+            <div className="divider"></div>
+            <div className="cancel-button">
+              <button type="button"> Cancelar</button>
+            </div>
           </div>
         </div>
       </div>

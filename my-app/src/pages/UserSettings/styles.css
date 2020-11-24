@@ -5,11 +5,15 @@
   justify-content: center;
 }
 .usersettings-page input {
-  padding-bottom: 20px;
   background-color: var(--light-grey);
+  height: 40px;
+  padding-left: 5px;
+
+  border-radius: 8px;
 }
 .usersettings-page span {
   color: var(--light-brown);
+  padding-top: 5px;
 }
 .usersettings-page h1 {
   color: var(--light-brown);
@@ -36,13 +40,13 @@
 }
 .span-input-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0fr 1fr;
 }
-
 .button-update {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 60px;
 }
 
 .button-update button {
@@ -61,7 +65,11 @@
   transition: 0.2s;
 }
 .center-data h1 {
-  padding: 50px 0px 0px 0px !important;
+  padding: 100px 0px 0px 0px !important;
 
   padding-bottom: 10px !important;
+}
+.divider {
+  width: 5px;
+  height: 5px;
 }
