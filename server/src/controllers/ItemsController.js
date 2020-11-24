@@ -25,7 +25,6 @@ module.exports = {
         model,
         serial,
         weight,
-        condition,
         broken,
       } = req.body;
 
@@ -40,7 +39,6 @@ module.exports = {
         model,
         serial,
         weight,
-        condition,
         broken,
       });
       return res.status(201).send();

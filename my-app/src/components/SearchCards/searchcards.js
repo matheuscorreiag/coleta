@@ -78,11 +78,6 @@ const SearchCards = () => {
                   </React.Fragment>
                 </div>
               </div>
-              {/* <div className="middle-align">
-                <div className="state-container">
-                  <p>Reuso</p>
-                </div>
-              </div> */}
             </div>
 
             <div id="modal-buttons" className="modal-buttons">

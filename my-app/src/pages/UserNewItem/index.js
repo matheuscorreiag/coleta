@@ -28,7 +28,6 @@ const UserNewItem = () => {
     model: "",
     serial: "",
     weight: "",
-    condition: "",
     broken: 1,
   });
   const [groupList, setGroupList] = useState(0);
@@ -38,8 +37,8 @@ const UserNewItem = () => {
     setGroupList(event.target.value);
   };
 
-  const onSubmit = () => {
-    dispatch(addItemFetch(params));
+  const onSubmit = async () => {
+    await dispatch(addItemFetch(params));
     setParams({
       category: "",
       group: 0,
@@ -51,7 +50,6 @@ const UserNewItem = () => {
       model: "",
       serial: "",
       weight: "",
-      condition: "",
     });
     swal("Pronto!", "Novo equipamento cadastrado com sucesso", "success");
     history.push("/searchresults");
@@ -112,27 +110,27 @@ const UserNewItem = () => {
               Origem
               <input
                 type="text"
-                onChange={(event) => setParams({ ...params, brand: event.target.value })}
+                onChange={(event) => setParams({ ...params, origin: event.target.value })}
               />
               Tombamento
               <input
                 type="text"
-                onChange={(event) => setParams({ ...params, brand: event.target.value })}
+                onChange={(event) => setParams({ ...params, tipping: event.target.value })}
               />
               Modelo
               <input
                 type="text"
-                onChange={(event) => setParams({ ...params, brand: event.target.value })}
+                onChange={(event) => setParams({ ...params, model: event.target.value })}
               />
               Numero de série
               <input
                 type="text"
-                onChange={(event) => setParams({ ...params, brand: event.target.value })}
+                onChange={(event) => setParams({ ...params, serial: event.target.value })}
               />
               Peso
               <input
                 type="text"
-                onChange={(event) => setParams({ ...params, brand: event.target.value })}
+                onChange={(event) => setParams({ ...params, weight: event.target.value })}
               />
               {/* Situação
               <select onChange={(event) => setParams({ ...params, situation: event.target.value })}>
@@ -157,8 +155,6 @@ const UserNewItem = () => {
                   type="file"
                   onChange={(event) => setParams({ ...params, image: event.target.files[0] })}
                 />
-                {console.log(params.image)}
-                {/* <div className="uploadImage-text"></div> */}
               </div>
             </div>
           </div>

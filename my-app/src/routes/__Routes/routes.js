@@ -13,6 +13,7 @@ import UserSearch from "../../pages/UserSearch";
 import PrivateRoute from "../_PrivateRoutes";
 import UserInfoIndex from "../../pages/UserInfoIndex";
 import UserAdmin from "../../pages/UserAdmin";
+import UserSettings from "../../pages/UserSettings";
 
 const Routes = () => {
   return (
@@ -29,6 +30,7 @@ const Routes = () => {
         <PrivateRoute path="/usersearch" exact={true} component={UserSearch} />
         <PrivateRoute path="/userinfoindex" exact={true} component={UserInfoIndex} />
         <PrivateRoute path="/useradmin" exact={true} component={UserAdmin} />
+        <PrivateRoute path="/usersettings" exact={true} component={UserSettings} />
       </Switch>
     </BrowserRouter>
   );

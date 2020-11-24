@@ -18,7 +18,6 @@ const UserNavBar = () => {
 
   const { isAuthenticated } = useSelector((state) => state.auth);
   const { userId } = useSelector((state) => state.permissions);
-  console.log(userId);
 
   const logout = () => {
     isAuthenticated && dispatch(logoutService());
@@ -52,7 +51,11 @@ const UserNavBar = () => {
           <Add onClick={() => history.push("/usernewitem")} />
         </div>
         <div className="bottom-icons">
-          <Settings />
+          <Settings
+            onClick={() => {
+              history.push("/usersettings");
+            }}
+          />
           <ExitToApp onClick={logout} />
         </div>
       </div>
